@@ -1,0 +1,16 @@
+2023-11-17 13:34:04,018 ERROR [118] (BkTask+<>c__DisplayClass9_0:106) - 背景錯誤TodoCalAlert
+System.AggregateException: 發生一或多項錯誤。 ---> System.AggregateException: 發生一或多項錯誤。 ---> System.Threading.Tasks.TaskCanceledException: 工作已取消。
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 IotApi.WraIotApi.<GetData>d__14`1.MoveNext() 於 D:\CVS_SRC\SourceCode\一河局\TESTIOT\WraIotApi.cs: 行 106
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   於 IotApi.WraIotApi.GetLatestData_PhysicalQuantity(String token, String pqid) 於 D:\CVS_SRC\SourceCode\一河局\TESTIOT\WraIotApi.cs: 行 36
+   於 SGDS.Controllers.Api.ComplexAlertController.CalAlert(Nullable`1 rh1ajust) 於 D:\CVS_SRC\SourceCode\水利署\水利署重大水災情\WRA-FDIS\SGDS\Controllers\Api\ComplexAlertController.cs: 行 232
+   於 SGDS.BkTask.<>c__DisplayClass11_0.<TodoCalAlert>b__0() 於 D:\CVS_SRC\SourceCode\水利署\水利署重大水災情\WRA-FDIS\SGDS\BkTask.cs: 行 164
+   於 SGDS.BkTask.<>c__DisplayClass9_0.<Todo>b__0(Object sender, ElapsedEventArgs e) 於 D:\CVS_SRC\SourceCode\水利署\水利署重大水災情\WRA-FDIS\SGDS\BkTask.cs: 行 106
+---> (內部例外狀況 #0) System.AggregateException: 發生一或多項錯誤。 ---> System.Threading.Tasks.TaskCanceledException: 工作已取消。
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 IotApi.WraIotApi.<GetData>d__14`1.MoveNext() 於 D:\CVS_SRC\SourceCode\一河局\TESTIOT\WraIotApi.cs: 行 106
+---> (內部例外狀況 #0) System.Threading.Tasks.TaskCanceledException: 工作已取消。<---
+<---
+

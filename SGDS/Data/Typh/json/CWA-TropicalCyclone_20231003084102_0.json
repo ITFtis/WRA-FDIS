@@ -1,0 +1,958 @@
+{
+  "cwaopendata": {
+    "identifier": "CWA-TropicalCyclone_20231003084102",
+    "sender": "weather@cwa.gov.tw",
+    "sent": "2023-10-03T08:41:02+08:00",
+    "status": "Actual",
+    "msgType": "Update",
+    "scope": "Public",
+    "dataset": {
+      "tropicalCyclones": {
+        "tropicalCyclone": {
+          "year": "2023",
+          "typhoon_name": "KOINU",
+          "cwa_typhoon_name": "小犬",
+          "cwa_td_no": "16",
+          "cwa_ty_no": "14",
+          "analysis_data": {
+            "fix": [
+              {
+                "fix_time": "2023-09-29T14:00:00+08:00",
+                "coordinate": "134.9,15.4",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "35",
+                "moving_direction": "WSW",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-09-29T20:00:00+08:00",
+                "coordinate": "134.0,15.3",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "16",
+                "moving_direction": "W",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-09-30T02:00:00+08:00",
+                "coordinate": "133.0,15.5",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "998",
+                "moving_speed": "18",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "120"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "120"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-09-30T08:00:00+08:00",
+                "coordinate": "131.6,15.3",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "998",
+                "moving_speed": "25",
+                "moving_direction": "W",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "90"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "110"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "110"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-09-30T14:00:00+08:00",
+                "coordinate": "131.1,15.7",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "998",
+                "moving_speed": "12",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "100"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "110"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "110"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-09-30T20:00:00+08:00",
+                "coordinate": "130.9,16.3",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "998",
+                "moving_speed": "12",
+                "moving_direction": "NNW",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "100"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "110"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "110"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-01T02:00:00+08:00",
+                "coordinate": "130.2,16.9",
+                "max_wind_speed": "20",
+                "max_gust_speed": "28",
+                "pressure": "995",
+                "moving_speed": "17",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "100"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "110"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "110"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-01T08:00:00+08:00",
+                "coordinate": "129.5,17.4",
+                "max_wind_speed": "25",
+                "max_gust_speed": "33",
+                "pressure": "985",
+                "moving_speed": "15",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "100",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "160"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "90"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-01T14:00:00+08:00",
+                "coordinate": "128.9,17.8",
+                "max_wind_speed": "30",
+                "max_gust_speed": "38",
+                "pressure": "975",
+                "moving_speed": "13",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "120",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "160"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "160"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "90"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "40",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "40"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "40"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "40"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "40"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-01T20:00:00+08:00",
+                "coordinate": "128.6,18.2",
+                "max_wind_speed": "33",
+                "max_gust_speed": "43",
+                "pressure": "970",
+                "moving_speed": "9",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "150",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "190"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "190"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "110"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "120"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "50",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "40"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "40"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-02T02:00:00+08:00",
+                "coordinate": "128.1,18.8",
+                "max_wind_speed": "35",
+                "max_gust_speed": "45",
+                "pressure": "965",
+                "moving_speed": "14",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "180",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "180"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "180"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "170"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "190"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "60",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "50"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "50"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "50"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "70"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-02T08:00:00+08:00",
+                "coordinate": "127.3,19.1",
+                "max_wind_speed": "40",
+                "max_gust_speed": "50",
+                "pressure": "950",
+                "moving_speed": "15",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "200",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "200"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "200"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "190"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "200"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "90"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-02T14:00:00+08:00",
+                "coordinate": "126.6,19.6",
+                "max_wind_speed": "40",
+                "max_gust_speed": "50",
+                "pressure": "950",
+                "moving_speed": "15",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "200",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "200"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "200"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "190"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "200"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "90"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-02T20:00:00+08:00",
+                "coordinate": "126.2,19.9",
+                "max_wind_speed": "43",
+                "max_gust_speed": "53",
+                "pressure": "945",
+                "moving_speed": "9",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "220",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "200"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "240"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "90"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-02T23:00:00+08:00",
+                "coordinate": "125.6,20.1",
+                "max_wind_speed": "43",
+                "max_gust_speed": "53",
+                "pressure": "945",
+                "moving_speed": "22",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "220",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "220"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "70",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "70"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-03T02:00:00+08:00",
+                "coordinate": "125.3,20.1",
+                "max_wind_speed": "43",
+                "max_gust_speed": "53",
+                "pressure": "945",
+                "moving_speed": "10",
+                "moving_direction": "W",
+                "circle_of_15ms": {
+                  "radius": "220",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "220"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "210"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "220"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "70",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "60"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "70"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-03T05:00:00+08:00",
+                "coordinate": "125.1,20.4",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "13",
+                "moving_direction": "NNW",
+                "circle_of_15ms": {
+                  "radius": "250",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "250"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "250"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "230"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "250"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "fix_time": "2023-10-03T08:00:00+08:00",
+                "coordinate": "125.1,20.5",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "4",
+                "moving_direction": "N",
+                "moving_prediction": [
+                  {
+                    "@lang": "zh-hant",
+                    "#text": "以每小時11公里速度，向西北轉西進行"
+                  },
+                  {
+                    "@lang": "en-us",
+                    "#text": "NW TURNING WEST 11 KM/HR"
+                  }
+                ],
+                "circle_of_15ms": {
+                  "radius": "250",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "250"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "250"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "230"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "250"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "forecast_data": {
+            "fix": [
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "6",
+                "coordinate": "124.8,21.1",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "12",
+                "moving_direction": "NNW",
+                "circle_of_15ms": {
+                  "radius": "250"
+                },
+                "circle_of_25ms": {
+                  "radius": "80"
+                },
+                "radius_of_70percent_probability": "30"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "12",
+                "coordinate": "124.4,21.5",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "10",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "250"
+                },
+                "circle_of_25ms": {
+                  "radius": "80"
+                },
+                "radius_of_70percent_probability": "60"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "18",
+                "coordinate": "123.8,21.7",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "11",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "250"
+                },
+                "circle_of_25ms": {
+                  "radius": "80"
+                },
+                "radius_of_70percent_probability": "75"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "24",
+                "coordinate": "123.1,21.8",
+                "max_wind_speed": "45",
+                "max_gust_speed": "55",
+                "pressure": "940",
+                "moving_speed": "12",
+                "moving_direction": "W",
+                "circle_of_15ms": {
+                  "radius": "250"
+                },
+                "circle_of_25ms": {
+                  "radius": "80"
+                },
+                "radius_of_70percent_probability": "90"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "36",
+                "coordinate": "121.5,22.1",
+                "max_wind_speed": "43",
+                "max_gust_speed": "53",
+                "pressure": "945",
+                "moving_speed": "14",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "250"
+                },
+                "circle_of_25ms": {
+                  "radius": "80"
+                },
+                "radius_of_70percent_probability": "130"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "48",
+                "coordinate": "120.1,22.4",
+                "max_wind_speed": "40",
+                "max_gust_speed": "50",
+                "pressure": "950",
+                "moving_speed": "12",
+                "moving_direction": "WNW",
+                "circle_of_15ms": {
+                  "radius": "220"
+                },
+                "circle_of_25ms": {
+                  "radius": "70"
+                },
+                "radius_of_70percent_probability": "180"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "72",
+                "coordinate": "117.7,22.7",
+                "max_wind_speed": "30",
+                "max_gust_speed": "38",
+                "pressure": "975",
+                "moving_speed": "10",
+                "moving_direction": "W",
+                "circle_of_15ms": {
+                  "radius": "200"
+                },
+                "circle_of_25ms": {
+                  "radius": "60"
+                },
+                "radius_of_70percent_probability": "300"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "96",
+                "coordinate": "116.4,22.3",
+                "max_wind_speed": "20",
+                "max_gust_speed": "28",
+                "pressure": "995",
+                "moving_speed": "6",
+                "moving_direction": "WSW",
+                "circle_of_15ms": {
+                  "radius": "180"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "330"
+              },
+              {
+                "init_time": "2023-10-03T08:00:00+08:00",
+                "tau": "120",
+                "coordinate": "115.7,21.4",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "998",
+                "moving_speed": "5",
+                "moving_direction": "SW",
+                "circle_of_15ms": {
+                  "radius": "150"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "410"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

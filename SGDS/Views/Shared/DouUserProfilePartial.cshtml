@@ -1,0 +1,84 @@
+﻿@********* 如有必要可改UserBase及 User Controller***********@
+@{var _user = Dou.Context.CurrentUser<Dou.Models.UserBase>();}
+@functions{
+    public string GetClientIP()
+    {
+        string ClientIP = "";
+        if (Request.ServerVariables["HTTP_VIA"] == null)
+        {
+            ClientIP = Request.ServerVariables["REMOTE_ADDR"].ToString();
+        }
+        else
+        {
+            ClientIP = Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
+        }
+        ClientIP = ClientIP.Replace("::1", "127.0.0.1");
+        return ClientIP;
+    }
+}
+<ul class="nav navbar-nav navbar-right user-profile-nav">
+    <li><a id="user-profile" title="使用者資訊">@(_user == null ? "匿名" : _user.Name) <span class="glyphicon glyphicon-user"></span></a></li>
+</ul>
+<script>
+
+    $(document).ready(function () {
+        @if (_user == null)
+        {
+            @********* 如有必要可改User Controller***********@
+               @:var _profileContent = '@Html.ActionLink("登入", "DouLogin", "User", routeValues: new { redirectLogin=true }, htmlAttributes: new { id = "loginLink" })'@(";")
+                                                        }
+        else
+        {
+            @:var _profileContent = '<div>帳 號:@_user.Id </div><div>名 稱:@_user.Name </div><div> IP:@Request.UserHostAddress</div>@*<div>IP2:@GetClientIP()</div>*@<hr>' +
+                                    @********* 如有必要可改 User Controller***********@
+            @:'<div>@Html.ActionLink("變更密碼", "DouResetPassword", "User", routeValues: null, htmlAttributes: new { id = "resetPasswordLink" })</div>' +
+            @:'<div>@Html.ActionLink("編輯個人資料", "DouEditProfile", "User", routeValues: null, htmlAttributes: new { id = "editEditProfileLink" })</div><hr>' +
+            @:'<div>@Html.ActionLink("登出", "DouLogoff", "User", routeValues: null, htmlAttributes: new { id = "logoffLink" })</div>';
+
+        }
+
+        $('#user-profile').popover({ content: _profileContent, placement: function () { return $('.system-menu-header > button').is(":visible") ? "top" : "bottom" }, trigger: "click hover ", html: true, animation: true }).//, container:'body' }).
+        click(function () {
+            $(this).toggleClass("fix-popover");
+            var pid = $(this).attr('aria-describedby');
+            var $_sdom = $('#user-profile + .popover a');
+            if (pid) { //bootstrap5  20220928
+                $_sdom = $('#' + pid + ' a')
+            }
+            $_sdom.off('click').click(function () {
+                helper.misc.showBusyIndicator();
+            });
+        });
+
+    });
+</script>
+<style>
+    .navbar-nav.navbar-right {
+        /*align-items:flex-end;*/
+    }
+
+    #user-profile + div {
+        white-space: nowrap;
+        width: auto;
+        /*padding:2px 6px;*/
+    }
+
+    @@media (max-width: 576px) {
+        #user-profile {
+            float: left;
+            padding: 0;
+        }
+
+            #user-profile + .popover {
+                margin-left: 42px;
+            }
+
+            #user-profile.fix-popover + .popover {
+                box-shadow: 0 5px 10px rgba(255,255,255,1);
+            }
+
+        .user-profile-nav {
+            order: -1;
+        }
+    }
+</style>

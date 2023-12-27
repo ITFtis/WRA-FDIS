@@ -1,0 +1,630 @@
+[
+  {
+    "SensorUUID": "6a11fa3d-6556-4047-ae18-55c53afcc47e",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "de4bb640-f5bc-4ee7-b7ad-a887c3a33b37",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "05e2666b-d072-4330-a102-9b7abf4f7570",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "3a3bac1b-f36f-45ab-abc1-63e7fb45baee",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "4d737be9-806b-457e-923d-3862174e992c",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "ded39fc1-9e74-4ca6-8b2c-e9beefac3c26",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "19dd8f7d-9e9e-409b-8718-bfaceb3b38a3",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "1df13bac-6e64-495b-bc4b-f6b83a393000",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "ec86daee-cd31-49ac-9f05-c31e08305daa",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "c1430e4a-eec6-49c8-88b8-3eb8ae3a2aa7",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "22d5cda9-240e-431c-bbc5-990045662c48",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "7749a1aa-a455-4559-aca0-14e5f566ab6c",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "73647803-84e9-4729-b466-c5e55de42ddf",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "9b8128ec-f52a-4cb8-b604-049dfef5880e",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "a628e64a-ba9a-4295-b4e8-d36acbc68880",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "b5ef0d24-97dc-49a1-8c7a-35045085a6a0",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "5109aea2-8a3a-4ebd-9ec1-5bfae848418e",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "c1192b90-12d4-4ef5-93b9-dc4adb306e75",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  },
+  {
+    "SensorUUID": "1ff2b490-9368-4758-8a37-96af95f15610",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "c744e9a9-5680-4429-bff0-709fbf339b28",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "6ca77f3b-3cd2-48ce-8c94-bea9bbf1ecd7",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "9773a4fc-9670-4f0d-9082-9bc9ef052b63",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "640f6999-d23a-45d7-995a-0dbdaf6d3c34",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "8ead08e9-7fbb-4429-9014-158be763c7d6",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "6cb28cbc-4972-4758-9641-970f05106039",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "395e5585-55c0-4faa-b7f7-7cad54c0fa25",
+    "Sensitivity": "影響弱勢機構,影響重要交通設施,影響交通要道"
+  },
+  {
+    "SensorUUID": "f9ef5e70-ab0b-4955-ba72-6deaf20e8597",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "867f420e-1979-4781-9fad-56fb45102fbf",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "624ee966-5f8b-429b-b337-1245937bdebf",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "d83c31fc-851d-4d25-9930-e84c3268d680",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "60a7297e-e60e-4055-8cda-bf6cf3e1acca",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "7dc30a3d-a362-4593-a79d-693079c9652b",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "6004a552-ef70-4f2a-b54b-cce8c17b6868",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "b44cccbe-28f9-45b3-bf29-0618037af065",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "97c30cb9-01ed-404c-85cf-e21f46f83fc3",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "ef3d6561-2ce2-46ab-8b91-9e5352da52b5",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "fc25998a-2545-42a5-8250-2f1f58e1e105",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "5f240cfd-8522-499e-8106-87db04d248d7",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "e1cca468-55e7-4e4b-b7c9-aa861e33a642",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "0388a2b0-efdd-41e5-b4c9-ded81c5ec478",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "8ef604f2-3e32-4999-80c9-13b58a482d8b",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "43e887c6-2e34-4733-bd7a-055f226497db",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "df0a63f6-8a0e-4d2a-870c-fa6b6b31f32f",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "f98a5548-fadf-4a86-adc1-b74c1bda4ccf",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "6f7ee390-5a6c-489e-8098-a5b13c22e61e",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  },
+  {
+    "SensorUUID": "66dfacfc-dd08-4df2-9017-80a2398be555",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "f6186d9f-187c-4f72-af8a-011ee57e9821",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "2f92e28a-0e35-4aee-b3c7-d441eb6162e8",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "4e9aebd8-ee7d-4384-bacf-09835f314073",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "3cc550c8-d0e4-459e-a6ad-62c93dc74616",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "136f6932-d88a-41b8-a7f2-2e335e247b89",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "11cb78be-e2ca-4315-9d0b-d4f0593a42e5",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  },
+  {
+    "SensorUUID": "a0b33f6d-ec17-4f7a-9602-49d8d8c14317",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "836202df-94bd-4dd7-8a59-07a7fd41b486",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "e9318efe-9034-4bf5-a626-d841a98118de",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "1b6a9cec-716a-4470-a6d5-741a63c99b97",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "df43979d-2fe8-48e6-be40-ddd9e670138b",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "5eed4195-127e-401c-927e-25e6fd5bbb14",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "895630e3-9416-4465-a1e0-becc3aa3c795",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "8ae96e23-4922-470e-9373-4fcd7f8dd85e",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "94449112-88e6-4155-9e99-89e8a69cba41",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "16a2afb3-8da2-4f52-be0d-1672e718c407",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "8ce9a8d7-33da-46a2-9e5d-e56df3c96bea",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "336b9890-a67e-422c-b9eb-cda5a199c511",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "ec88fd6b-9313-4b11-b2ce-68a2b5a91084",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "a5dde57e-7f68-4362-bc8a-0313e4697544",
+    "Sensitivity": "影響交通要道,地下道或涵洞"
+  },
+  {
+    "SensorUUID": "7300da35-d022-4891-be77-ddc8484382b7",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "2c07ff8d-5705-415c-b563-4d2a68b87cb0",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "b890a951-b82f-41a2-82d0-7259e232520f",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "838cb2c2-a3f5-4718-bfbc-8be38ef2f181",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "83350590-c1da-4f91-ad75-e7d9f2ecc266",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "ce23d416-c419-4034-9906-46960b363228",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "ed3cc2cf-9e65-4f9e-963e-354a832a51e2",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "395b7054-c29f-44ac-9b0a-a5466d52d587",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "f47b554e-f7d2-485e-8aba-63f964c10194",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "342f959c-f3b7-49d0-8646-1f38183a4878",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "e299cce0-dcad-4ab4-8add-a5e3ad347811",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "467c9271-0ed4-4db7-bf34-7c943ac178bf",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "08c23297-15b4-4f10-ae96-ce6a67ff6f37",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "4cdfe2a3-3013-41c5-a3ac-e3775e91a212",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "9627c44b-96e9-4732-8908-2ce8c78beac1",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "e6810943-6a6d-4484-83bb-a73de51d1a9d",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "4bc1431a-e8bc-4670-89e6-3d3d22418381",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "eb0e49ca-5410-4a95-8e5d-3079e088167f",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "1d857277-26a9-4a85-a27e-166ddfc8d499",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "3f35a99f-c39c-4964-afe7-b0d5c87f5afb",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "2782fe39-8533-4a17-8111-23aec956c897",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "83093542-2bbf-4861-885d-274eae079ebc",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "5aef2e01-ea96-41f2-93e8-02980e1741c0",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "6ef95e23-82b5-4fb6-bf44-119d8054758e",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "5cdd320c-8be3-4a89-995e-073537266ecf",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "9d50f03c-30d9-453d-8235-99fd9ca272e2",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "7b6c0863-37c7-420c-b28d-3609c7bbdc2a",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "1d9487ef-bac3-4d3e-80bb-f68237af57a5",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "78aa6886-c32b-4fb0-b207-bb634e076f03",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "b2e4a2e5-b959-4e72-b7c9-c9a34f668326",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "8681ff41-2244-4b86-a40c-5dd763b2cd3b",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "274f9eb3-57df-4eb2-9681-61ff522938e7",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "91017ac5-0947-43a0-a5f2-cfb99b231f21",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "39826bbe-9dff-4139-9ac0-7bd1c3339357",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "4cbca74c-ea04-48a5-a26e-cc388bf55a02",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "02bd8085-e215-44e4-aa90-a51ea9dfc320",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "74c7234f-fdf1-4166-9da7-60d0055204da",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "6e396249-1079-433d-8557-3e168573f368",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "97db5369-c152-47a5-ad4f-941035b761d4",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "674cf4d1-228a-48f3-8dc8-7e649a5e93b6",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "457cfd52-8c5b-4097-ae48-08f0027aaedf",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "9d672e79-e62e-455a-888c-ca2ac6ecc58b",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "806be927-f6ad-4cb9-9d21-6997f5f0a490",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "e8e0c072-4314-4ec2-91bd-b6651dd31ab0",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "6e806620-193e-4139-bc13-a94ef1725685",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "e3ea9a16-867f-4a8e-b5ed-478005eacb32",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "bded4041-1b94-428f-af2d-6940cdfe1311",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "9836ecef-0fda-4ce8-b0c7-d6a00c05254e",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "4ec359f2-96f3-415e-b5f2-92e99b0399b5",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "ffeb4cf7-ca1f-476a-91b4-d15f2b8351f7",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "c1353450-4427-4fc9-b962-5768a11ceb74",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "679e12e9-4340-4faa-8842-85d7518170eb",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "0c25a8cc-8336-412d-a3e9-093e606fd277",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "3f611d40-8308-4dda-a4a7-eff9b8841beb",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "4fff5591-1a06-4e21-83a5-0720d3bde98b",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "8ed0d48e-430e-457c-b854-e83d9d6daebb",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "f6a7eed9-e6a0-43d1-ac00-64d3864f1c1c",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "1a2151b7-9615-41e9-b801-604d6fd1b714",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "3990b282-319c-4083-a81d-25a9e9136924",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "267e5bb5-d7e9-4507-98e3-10d45e1d7a47",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "c26e7650-0b9c-4ccf-86a8-898eeb76d2bc",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "d5deb4b7-6504-479d-9f99-328dc43b5cc4",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "b027784c-16f8-4c5c-99f5-ed6a0ec2bf61",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "96f91f2f-a1b0-46f1-ba4b-e437df8c2609",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "e151d334-403a-41e3-8ade-dea721be611a",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "d50a2c68-6b47-49ec-b1b0-c0ac6c6bc09c",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "8d739bad-d965-41be-bb9e-0b0a59d93ea2",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "a2099c97-dde5-4aa5-bc1d-209931724fb8",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "38591772-659c-4882-84b0-3ce58013ff92",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "337bc428-d2c9-4eb7-9059-27837b0c6ab3",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "9de4d081-a051-4c4d-9035-29145794104a",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "cf25342d-ea77-4123-a17d-6954468c2f37",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "14b6dc20-6d03-4508-8ef4-993b80fe557a",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "82d01f71-efc6-40be-9f66-771ff0c56237",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "4b78f62f-ddf8-43a5-b775-05a22ee462ba",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "fd00c2db-3a77-4d49-8199-7f46e614935f",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "5675487f-44eb-4e16-9136-9dda885ab29c",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "3085a8d0-d041-4f68-b6e9-b86219054da9",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "feb2ec11-5d2e-4d1d-a9e3-fcc42a29585b",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "d5701643-166d-4abd-a5f7-adb5dc05cf0e",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "8d6da446-a2a8-42e1-8388-31cbf08b1cfb",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "928bdb08-358d-4444-8ab0-c29d99284cc0",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "3b7bcc62-bfb7-48a9-956a-dadd7a5d826a",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "d5d76a91-1b9f-4635-9e6e-8f17ebc00954",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  },
+  {
+    "SensorUUID": "514f2cd5-dba7-4416-a5c7-cd9ef0bff70a",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "868e325a-e739-48fd-a9bb-52654951371a",
+    "Sensitivity": "影響弱勢機構"
+  },
+  {
+    "SensorUUID": "71370608-dcbb-4649-b6da-55fb6265a5d1",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  },
+  {
+    "SensorUUID": "b722db26-0002-4de8-9ee4-0b67db13fa9f",
+    "Sensitivity": "影響交通要道"
+  },
+  {
+    "SensorUUID": "a07a4dac-fac0-43c0-9a11-fdedaf57ea26",
+    "Sensitivity": "地下道或涵洞"
+  },
+  {
+    "SensorUUID": "f576149b-dcdb-4bdd-9efe-dcd176029edb",
+    "Sensitivity": "影響重要交通設施"
+  },
+  {
+    "SensorUUID": "28cb48f8-c16d-4365-8e5f-f55d836ca405",
+    "Sensitivity": "影響弱勢機構,影響交通要道"
+  }
+]

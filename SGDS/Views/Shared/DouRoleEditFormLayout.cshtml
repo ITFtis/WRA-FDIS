@@ -1,0 +1,84 @@
+﻿@using Dou.Misc.Extension
+@using Dou.Controllers
+@Html.Raw(Html.MenuJavascript("role_edit_menuitems"))
+<script>
+
+    var reBuildMenuItems = function (_items) {
+        for (var _idx = 0; _idx < _items.length; _idx++) {
+            var _element = _items[_idx];
+            _element.name = _element.Name;
+            if (_element.Children) {
+                reBuildMenuItems(_element.Children);
+                _element.items = _element.Children;
+            }
+        }
+    }
+    reBuildMenuItems(role_edit_menuitems);
+</script>
+@*dom 結構
+    <form name="form" action="" class="data-edit-form-group">
+    <div class="field-container" data-field="欄位名稱">
+        <div class="field-content"></div>
+    </div>
+</form>*@
+
+<div class="container-fluid ">
+    <form name="form" action="" class="data-edit-form-group col row">
+        <style>
+            .data-edit-form-group {
+                display: flex;
+                flex-wrap: inherit;
+            }
+            .attribute-tile {
+                /*margin: 0 0 8px -6px;*/
+                font-size: 1.2em;
+                font-weight: bold;
+                color: gray;
+            }
+
+            .role-edit-sub-container {
+                /*border: 1px #ddd solid;*/
+                border-radius: 4px;
+                /*margin: -8px;*/
+                padding: 4px;
+                /*height: 276px;*/
+                overflow: auto;
+                min-height:300px;
+                max-height:900px;
+            }
+            .rtree-root .allow-anonymous.rtree-node > .r-tree-check-icon:before {
+                color: #aaa;
+            }
+
+            .rtree-root .allow-anonymous.rtree-node > .rtree-node-icon:before {
+                text-shadow:-1px -1px 0 #aaa, -1px 1px 0 #aaa, 1px 1px 0 #aaa, 1px -1px 0 #aaa; 
+            }
+            .role-edit-sub-container input, .role-edit-sub-container textarea {
+                max-width:100%;
+            }
+        </style>
+        <div class="col-6">
+            <div class="attribute-tile">屬性</div>
+            <div class="role-edit-sub-container">
+                @*@Html.DataEditContainer("Id", "編碼", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Name", "名稱", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Remark", "備註", null, "col-sm-9", "col-sm-3")*@
+                @Html.DataEditContainer("Id", "編碼")
+                @Html.DataEditContainer("Name", "名稱")
+                @Html.DataEditContainer("Remark", "備註")
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="attribute-tile">權限</div>
+            <div class="role-edit-sub-container">
+                @Html.DataEditContainer("RolePermissions")
+            </div>
+        </div>
+    </form>
+</div>
+@*@{
+    var controller = ViewContext.Controller as RoleBaseController<Wra01ids.Models.Role>;
+
+}*@
+
+

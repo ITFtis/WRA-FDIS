@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+            overflow: hidden;
+        }
+
+        .ocean {
+            /*height: 5%;*/
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #015871;
+        }
+
+        .wave {
+            --w1-max: 100px;
+            --w1-min: 80px;
+            --w2-max: 108px;
+            --w2-min: 92px;
+            --w3-max: 120px;
+            --w3-min: 118px;
+            --w-speed: 60s;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+            background: url(images/wave.svg) repeat-x;
+            position: absolute;
+            top: -100px;
+            width: 200%;
+            opacity: .6;
+            height: 100px;
+            animation: wave1 var(--w-speed) cubic-bezier(0.95, 0.6, 0.8, 0.95) infinite;
+            transform: translate3d(0, 0, 0);
+            transform: scaleX(5);
+        }
+            .wave.w2 {
+                top: -110px;
+                opacity: .4;
+                height: 110px;
+                transform: scaleX(8);
+                animation: wave2 var(--w-speed) cubic-bezier(0.95, 0.8, 0.75, 0.95) infinite;
+            }
+            .wave.w3 {
+                top: -120px;
+                opacity: .2;
+                height: 120px;
+                transform: scaleX(8);
+                animation: wave3 var(--w-speed) cubic-bezier(0.98, 0.75, 0.75, 0.98) infinite;
+            }
+           /* .wave:nth-of-type(2) {
+                top: -175px;
+                animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+                opacity: 1;
+            }*/
+
+        @keyframes wave1 {
+            0% {
+                margin-left: 0;
+                top: calc( 0px - var(--w1-max));
+                height: var(--w1-max);
+            }
+            50% {
+                margin-left: -200%;
+                top: calc( 0px - var(--w1-min));
+                height: var(--w1-min);
+            }
+            100% {
+                margin-left: 0;
+                top: calc( 0px - var(--w1-max));
+                height: var(--w1-max);
+            }
+        }
+        @keyframes wave2 {
+            0% {
+                margin-left: -220%;
+                top: calc( 0px - var(--w2-min));
+                height: var(--w2-min)
+            }
+
+            50% {
+                margin-left: 0;
+                top: calc( 0px - var(--w2-max));
+                height: var(--w2-max)
+            }
+
+            100% {
+                margin-left: -220%;
+                top: calc( 0px - var(--w2-min));
+                height: var(--w2-min)
+            }
+        }
+        @keyframes wave3 {
+            0% {
+                margin-left: 0;
+                top: calc( 0px - var(--w3-max));
+                height: var(--w3-max)
+            }
+
+            50% {
+                margin-left: -280%;
+                top: calc( 0px - var(--w3-min));
+                height: var(--w3-min)
+            }
+
+            100% {
+                margin-left: 0;
+                top: calc( 0px - var(--w3-max));
+                height: var(--w3-max)
+            }
+        }
+    
+
+        @keyframes swell {
+            0%, 100% {
+                transform: translate3d(0,-25px,0);
+            }
+
+            50% {
+                transform: translate3d(0,5px,0);
+            }
+        }
+        .bk {
+            width:100%;
+            height:100%;
+            position: absolute;
+            z-index: 0;
+            background-image: url(images/bk.jpg);
+            background-size: cover;
+        }
+        </style>
+</head>
+<body>
+    <div class="bk"></div>
+    <div class="ocean">
+        <div class="wave w3"></div>
+        <div class="wave w2"></div>
+        <div class="wave w1"></div>
+        <!--<div class="wave"></div>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"WraFmgApiUrl": "https://fmg.wra.gov.tw/swagger/api/",
+	"WraFhyApiUrl": "https://fhy.wra.gov.tw/api/v2/",
+	"WraFhyApiKey": "XEzkLbaHalfdYuaV0ahvzhbWeqsmkGlg",
+	"WraJavaJob": "https://pj.ftis.org.tw/WRA-JAVA-JOBS/",
+	"PTWaterApiUrl": "http://www.acems.tw/API/LastData/GetLastDataByCaseNumber/8357404D-6852-4C56-BD5C-FD3A09573675/true",
+	"TYWaterApiUrl": "https://winfo.tycg.gov.tw/Transfer/UploadFile/WATERLEVEL.xml",
+	"CWBDayRainfallUrl": "https://cwaopendata.s3.ap-northeast-1.amazonaws.com/Observation/O-A0040-003.kmz",
+	"CWBRadUrl": "https://qpeplus.cwa.gov.tw/static/data/grid_0.01deg/cref/",
+	"CWBQpf1h": "https://qpeplus.cwa.gov.tw/static/data/grid/qpfqpe_060min/"
+}

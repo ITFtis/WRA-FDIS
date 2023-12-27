@@ -1,0 +1,67 @@
+﻿
+<div id="mainmenu" class="offdisplay1 navbar fixed-top " style="z-index:950;" data-ctrl-cache="false">
+
+    <div class="container-fluid" style="width:100%">
+        <div class="navbar-header">
+
+        </div>
+        <div class="navbar-collapse collapse ">
+
+
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="#main-ctrl" class="popu-ctrl-menu nav-link" data-default-show="true" data-default-width="400" data-theme="light"><span class="glyphicon glyphicon-th-list"></span><span class="main-ctrl-desc">圖層資料</span></a></li>
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle  tools-group-ctrl nav-link" data-toggle="dropdown" data-default-show="true">地圖工具<b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="text-shadow:none;top:100px; right:10px;float: right; cursor: pointer;" data-display-direction="right">
+                        <li class="nav-item"><a href="#" class="nav-link fa fa-search-plus" id="_zoomin" data-glyphicon="glyphicon-zoom-in ">放  大</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link fa fa-home" id="_twfullext" data-glyphicon="glyphicon-home">全  景</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link fa fa-search-minus" id="_zoomout" data-glyphicon="glyphicon-zoom-out">縮  小</a></li>
+                        <li class="nav-item"><a href="#basemapDiv" class="posit-ctrl-menu nav-link fa fa-tasks" data-default-show="true" data-glyphicon="glyphicon-globe">底  圖</a></li>
+                        <li class="nav-item"><a href="#coordinateInfoDiv" class="posit-ctrl-menu nav-link fa fa-question-circle" data-default-show="true" data-glyphicon="glyphicon-info-sign">座標、比例尺</a></li>
+                        <li class="nav-item"><a href="#other-ctrl" class="nav-link popu-ctrl-menu" data-theme="info" data-default-width="280" data-default-top="57" data-default-left="370" data-glyphicon="glyphicon-th-large">氣象、防汛</a></li>
+                        @if (ViewBag.ToolNearCctv != null && ViewBag.ToolNearCctv == true)
+                        {
+                            <li class="nav-item"><a href="#" class="nav-link" id="_nearcctv" data-glyphicon="glyphicon-camera">鄰近影像</a></li>
+                        }
+                        @if (ViewBag.StatisticsData != null && ViewBag.StatisticsData == true)
+                        {
+                            <li class="nav-item"><a href="#FloodStatisticsPanel" class="offdisplay1 popu-ctrl-menu nav-link" data-default-width="66%" data-theme="gdelta">積淹水災情統計表</a></li>
+                            <li class="nav-item"><a href="#FacilityStatisticsPanel" class="offdisplay1 popu-ctrl-menu nav-link" data-default-width="400" data-theme="gdelta">水利設施統計表</a></li>
+                            <li class="nav-item"><a href="#LandUseDistrictStatisticsPanel" class="offdisplay1 popu-ctrl-menu nav-link" data-default-width="450" data-theme="gdelta">土地使用區分統計表</a></li>
+                        }
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div id="map"></div>
+<div class="popu-ctrl-container row-fluid fixed-at-left fixed-single">
+    <div class="basemapDivContainer" style="position:fixed;top:62px; right:1.5rem;z-index:1016;">
+        <div id="basemapDiv" data-display-direction="right" style="float: right; cursor: pointer"></div>
+    </div>
+    <div id="other-layer-info" style="position: fixed; bottom: 32px; right: 0; padding:4px;background-color:rgba(255,255,255,.3);border-radius:4px 0 0 0">
+        <span class="rader-layer offdisplay">雷達迴波<span class="rader-layer-time"></span></span>
+        <span class="sum-rainfall-layer offdisplay d-block">累計雨量<span class="sum-rainfall-layer-time"></span></span>
+        <span class="qpfqpe60-layer offdisplay d-block">預報1小時降雨<span class="qpfqpe60-layer-time"></span></span>
+    </div>
+    <div id="coordinateInfoDiv" style="position: fixed; bottom: 0; right: 0;  " data-display-direction="right">
+    </div>
+
+    <div id="main-ctrl" class=""></div>
+    <div id="other-ctrl" class="meter"></div>
+    <div id="legend-container">
+        <div id="rader-legend" class=""></div>
+        <div id="dayrainfall-legend" class=""></div>
+        <div id="qpesums-legend" class=""></div>
+    </div>
+    @if (ViewBag.StatisticsData != null && ViewBag.StatisticsData == true)
+    {
+        <div id="FloodStatisticsPanel"></div>
+        <div id="FacilityStatisticsPanel"></div>
+        <div id="LandUseDistrictStatisticsPanel"></div>
+    }
+</div>

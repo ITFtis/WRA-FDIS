@@ -1,0 +1,186 @@
+﻿@model IEnumerable<Dou.Models.RoleBase>
+@using Dou.Misc.Extension
+
+@Html.MenuMap()
+
+@{var var_options = "options_" + Guid.NewGuid().ToString().Replace("-", ""); var _containerId = "container_" + Guid.NewGuid().ToString().Replace("-", ""); }
+@Html.DataManagerOptionsJavascript("#" + _containerId, var_options)
+<div id="@_containerId" class="dou-role-continer"><table></table></div>
+<script>
+    $(document).ready(function(){
+        var permisssionFuncs = {
+            none: { value: 0, glyphicon: "" },
+            add: { value: 1, glyphicon: "glyphicon-plus", use:true },
+            update: { value: 2, glyphicon: "glyphicon-pencil", use: true },
+            delete: { value: 4, glyphicon: "glyphicon-remove", use: true },
+            all: { value: 1 | 2 | 4, glyphicon: "" },
+            ext1: { value: 32, glyphicon: "" },
+            ext2: { value: 64, glyphicon: "" },
+            ext3: { value: 128, glyphicon: "" },
+        };
+        @(var_options).fields.push({
+            title : "使用者",
+            field : "RoleUsers",
+            listFormatter :  function (v, row, _index) {
+                if (!window.show_role_user_list)
+                    window.show_role_user_list = function () {
+                        var that = this;
+                        $.each( $(this).parents("tbody:first").find(" td> a[data-roleuser]"),function(){
+                            if(that != this && this.initPopover){
+                                $(this).popover("hide");//.removeClass("fix-popover");
+                                if($(this).hasClass("fix-popover"))
+                                    $(this).trigger("click");
+                            }
+                        });
+                        if (!this.initPopover) {
+                            that.initPopover = true;
+                           
+                            var ids =[];
+                            $.each(JSON.parse( $(this).attr("data-roleuser")),function(){
+                                ids.push(this.UserId);
+                            });
+                            $.ajax({
+                                @************重設User controller****************@
+                                url:"@Url.Action( "GetUsers", "User")" ,
+                                datatype: "json",
+                                type: "POST",
+                                data: {"ids":ids}
+                            }).done(function (result, textStatus, jqXHR) {
+                                var _content = "";
+                                var _max = 10;
+                                $.each(result, function (_idx) {
+                                    if (_idx == _max && result.length > _max)
+                                        _content += "<div>....共" + result.length + "人</div>"
+                                    else if (_idx > _max)
+                                        return false;
+                                    else
+                                        _content+="<div>"+this.Name+"("+this.Id+")"+"</div>"
+                                });
+                                $(that).popover({ placement: "left", trigger: "hover  click", html: true, content: _content });
+                                $(that).popover("show");
+                            })
+                           .fail(function (jqXHR, textStatus, errorThrown) {
+                               alert(jqXHR);
+                               //$(that).hide_busyIndicator();
+                           });
+                        }
+                    }
+
+                return "<a data-roleuser='" + JSON.stringify(v) + "' onclick='$(this).toggleClass(\"fix-popover\")' onmouseover='show_role_user_list.call(this);'><span class='glyphicon glyphicon-user'> </span>*" + (v?v.length:'---') + "</a>";
+            }
+        })
+
+        @(var_options).fields.push({
+            title : "擁有權限",
+            field : "RolePermissions",
+            visible: false,
+            editFormtter: {
+                editContent: function ($_fieldContainer) {//第一層Dom僅能1個
+                    var $_treeContainer = $('<div>').appendTo($_fieldContainer);
+                    setTimeout(function () {
+                        $_treeContainer[0].rTree = new helper.tree.rTree($_treeContainer,
+                            { data: role_edit_menuitems, selectMode: helper.tree.selectMode.multiple, useline: true, checkeditable: true, fixed: true });
+                        //console.log(JSON.stringify(role_edit_menuitems));
+                        //初始Func控制項
+                        $.each($_treeContainer.find(".rtree-leaf"), function () {
+
+                            if (this.item.Attributes && this.item.Attributes.Func) {
+                                var $_func = $('<span class="pull-right" style="display: inline;width:100px;">').appendTo($(this));
+                                var _funcV = this.item.Attributes.Func;
+                                //debugger;
+                                for (var _func in permisssionFuncs) {
+                                    if (permisssionFuncs[_func].use) {
+                                        $_func.append('<span class="permission permission-' + _func + ' btn btn-sm btn-default glyphicon ' + permisssionFuncs[_func].glyphicon+ ' ' +
+                                            ((_funcV & permisssionFuncs[_func].value) === permisssionFuncs[_func].value ? '' : ' disabled') +//.disabled代表此作業無此功能
+                                            '" style="display: inline;">');
+                                    }
+                                }
+                            }
+                        });
+                        //開啟或關閉所有Func, .disabled代表此作業無此功能
+                        $_treeContainer.on(helper.tree.event.selectedLeafChange, function (e) {
+                            if($(e.target).hasClass( "allow-anonymous")) //匿名,永遠selected
+                                $(e.target).addClass("selected");
+
+                            if ($(e.target).hasClass("selected"))
+                                $(e.target).find(".permission:not(.disabled)").addClass("selected");
+                            else
+                                $(e.target).find(".permission:not(.disabled)").removeClass("selected");
+                        });
+
+                        //點擊Func
+                        $_treeContainer.find(".rtree-leaf .btn").click(function ( evt) {
+                            evt.stopPropagation();
+                            if(!$(this).hasClass( "allow-anonymous")){ //可匿名)
+                                if ($(this).parents(".rtree-leaf:eq(0)").hasClass("selected"))
+                                    $(this).toggleClass("selected");
+                            }
+                        });
+                        //設定值
+                        //if ($_treeContainer[0]._value) {
+                        var _permissionIds = [];
+                        if ($_treeContainer[0]._value) {
+                            $.each($_treeContainer[0]._value, function () {
+                                _permissionIds.push(this.Permission);
+                                //console.log("set value:" + this.Permission+">"+this.Func);
+                            });
+                        }
+
+                        _permissionIds = "|" +(_permissionIds.length>0? _permissionIds.join("|"):"" )+ "|";
+                        //console.log("$_treeContainer.find('.rtree-leaf'):"+$_treeContainer.find(".rtree-leaf").length);
+                        $.each($_treeContainer.find(".rtree-leaf"), function () {
+                            if(this.item.Attributes.AllowAnonymous)
+                                $(this).addClass( "allow-anonymous"); //可匿名
+                            //$(this).prop( "disabled", true );
+                            //console.log(this.item.Attributes.Name+this.item.Attributes.AllowAnonymous);
+                            if (_permissionIds.indexOf("|" + this.item.Id + "|") >= 0 || this.item.Attributes.AllowAnonymous) {
+                                //console.log('triger');
+                                $(this).trigger("click");//觸發selectedLeafChange勾選，Func會全選
+                                if ($_treeContainer[0]._value){
+                                    var _pid = this.item.Id;
+                                    var _permission = $.grep($_treeContainer[0]._value, function(_p,sadad) {
+                                        return _p.Permission == _pid;
+                                    })[0];
+                                
+                                    if(_permission){
+                                        for (var _func in permisssionFuncs) { //取消非擁有權限Func
+                                            if (permisssionFuncs[_func].use && (_permission.Func & permisssionFuncs[_func].value) !== permisssionFuncs[_func].value)
+                                                $(this).find(".permission-"+_func).removeClass("selected");
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                        //}
+                    });
+                    //return "<div></div>";
+                },
+                getValue: function ($editEle, row) {
+
+                    var _rolePermissions = [];
+                    var _s = $editEle[0].rTree.getSelectedLeaf();
+                    $.each(_s, function () {
+
+                        var $_leafEl = $(this.target);
+                        var _funcV = 0;
+                        for (var _func in permisssionFuncs) {
+                            if (permisssionFuncs[_func].use) {
+                                var $_temp = $_leafEl.find(".permission-" + _func + ".selected");
+                                if ($_temp.length > 0)
+                                    _funcV = _funcV | permisssionFuncs[_func].value;
+                            }
+                        }
+                        _rolePermissions.push({ RoleId: row.Id, Permission: this.value.Id, Func: _funcV });
+                    });
+                    return _rolePermissions;
+                },
+                setValue: function ($editEle, v) {
+                    $editEle[0]._value = v;
+                }
+            }
+        });
+
+        $("#@_containerId > table").DouEditableTable( @(var_options));
+    });
+</script>
+

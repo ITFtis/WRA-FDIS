@@ -1,0 +1,150 @@
+﻿@using Dou.Misc.Extension
+@using Dou.Controllers
+@*dom 結構
+        <form name="form" action="" class="data-edit-form-group">
+        <div class="field-container" data-field="欄位名稱">
+            <div class="field-content"></div>
+        </div>
+    </form>*@
+<div class="container-fluid ">
+    <form name="form" action="" class="form-horizontal data-edit-form-group col row">
+        <style>
+            .user-edit-tile {
+                margin: 0 0 8px -6px;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: gray;
+            }
+            .data-edit-form-group {
+                display: flex;
+                flex-wrap: inherit;
+            }
+            .user-attribute-edit-container, .user-edit-role-container {
+                border: 1px #ddd solid;
+                border-radius: 4px;
+                margin: -8px;
+                padding: 4px;
+                min-height: 442px;
+                max-height: 900px;
+                overflow: auto;
+            }
+           .user-edit-role-container{
+                height:calc( 100% - 1.2em );
+           }
+            .user-edit-role-container .glyphicon-user:before{
+                color:blue;
+                text-shadow:-1px -1px 0 #fff,-5px -1px 0 #444;
+                margin-left:5px;
+            }
+            .user-edit-role-container .selected-container{
+                height:60%; overflow:auto;
+                display:flex;
+            }  
+           
+             .user-edit-role-container > .selected-container .membership-groups-list, .user-edit-role-container > .selected-container .membership-groups-menus{
+                height: calc( 100% - 1.5rem );
+                overflow:auto;
+            } 
+            @@media (max-width: 768px) {
+                .user-attribute-edit-container,.user-edit-role-container {
+                    height:auto;
+                }
+                .user-edit-role-container .selected-container{
+                    height:auto; 
+                    overflow:hidden;
+                }  
+                .user-edit-role-container > .selected-container .membership-groups-list, .user-edit-role-container > .selected-container .membership-groups-menus{
+                    height: auto;
+                    overflow:hidden;
+                } 
+            }
+             .user-edit-role-container > .selected-container .membership-groups-list > *, .user-edit-role-container > .selected-container .membership-groups-menus > *{
+                display:block;
+                line-height: 1.5;
+            } 
+             .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func{
+                 cursor:pointer;
+                 /*background-color:lightgray;*/
+             }
+             
+             .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func:hover{
+                 background-color:lightgray;
+             }
+             .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func  > .col-sm-9,.user-edit-role-container > .selected-container .membership-groups-menus > .menu-func  > .col-sm-3{
+                 display:flex;
+                 padding-left:2px;
+                 padding-right:2px;
+             }
+             .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func  .glyphicon{
+                 line-height: 1.5;
+             }
+            .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func .permission.disabled {
+                color: #eee;
+                border-color: transparent;
+            }
+            .user-edit-role-container > .selected-container .membership-groups-menus > .menu-func.selected  .glyphicon-unchecked:before{
+                content: "\e067";
+            }
+            .data-edit-jspanel .rtree-leaf .permission.disabled {
+                color: transparent;
+                border-color: transparent;
+            }
+}
+            .user-edit-role-container .user-edit-sub-tile{
+                border-bottom:1px #eee solid;
+                width:100%;
+                color:gray;
+            }
+            /****編輯個人資料****/
+            .edit-profile-container  .field-container[data-field="Enabled"],.edit-profile-container  .field-container[data-field="RoleUsers"] ,.edit-profile-container .selected-container + .user-edit-sub-tile {
+                display:none;
+            }
+            .edit-profile-container .user-attribute-edit-container,.edit-profile-container  .user-edit-role-container {
+                height: auto;
+            }
+            .edit-profile-container .user-edit-role-container .selected-container {
+                height:382px;
+            }
+            .edit-profile-container  .user-edit-role-container > .selected-container .membership-groups-list,.edit-profile-container .user-edit-role-container > .selected-container .membership-groups-menus{
+                height: calc( 100% - 25px );
+                /*overflow:auto;*/
+            }
+        </style>
+        <div class="col-6">
+            <div class="user-edit-tile">屬性</div>
+            <div class="user-attribute-edit-container">
+
+                @Html.DataEditContainer("Id", "編碼", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Name", "使用者名稱", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Unit", "所屬單位", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("EMail", "EMail", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Tel", "連絡電話", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Address", "地址", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Enabled", "狀態", null, "col-sm-9", "col-sm-3")
+                @Html.DataEditContainer("Remark", "備註", null, "col-sm-9", "col-sm-3")
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="user-edit-tile">隸屬群組</div>
+            <div class="user-edit-role-container">
+                <div class="selected-container">
+                    <div class="col-sm-4" style="height:100%">
+                        <div class="user-edit-sub-tile">群組清單</div>
+                        <div class="membership-groups-list">
+                        </div>
+                    </div>
+                    <div class="col-sm-8" style="height:100%">
+                        <div class="user-edit-sub-tile">功能清單及預設網頁</div>
+                        <div class="membership-groups-menus">
+                        </div>
+                    </div>
+                </div>
+                <div class="user-edit-sub-tile" style="clear:both">群組選單</div>
+                @Html.DataEditContainer("RoleUsers")
+            </div>
+        </div>
+    </form>
+</div>
+
+

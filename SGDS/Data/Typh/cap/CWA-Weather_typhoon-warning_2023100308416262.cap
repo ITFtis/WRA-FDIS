@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>CWA-Weather_typhoon-warning_2023100308416262</identifier>
+  <sender>weather@cwa.gov.tw</sender>
+  <sent>2023-10-03T08:41:02+08:00</sent>
+  <status>Actual</status>
+  <msgType>Update</msgType>
+  <scope>Public</scope>
+  <references>weather@cwa.gov.tw,CWA-Weather_typhoon-warning_2023100305346257,2023-10-03T05:34:35+08:00 weather@cwa.gov.tw,CWA-Weather_typhoon-warning_2023100308256260,2023-10-03T08:25:03+08:00 weather@cwa.gov.tw,CWA-Weather_typhoon-warning_2023100308296262,2023-10-03T08:29:50+08:00 weather@cwa.gov.tw,CWA-Weather_typhoon-warning_2023100308416262,2023-10-03T08:41:02+08:00</references>
+  <info>
+    <language>zh-TW</language>
+    <category>Met</category>
+    <event>颱風</event>
+    <responseType>Monitor</responseType>
+    <urgency>Future</urgency>
+    <severity>Minor</severity>
+    <certainty>Likely</certainty>
+    <eventCode>
+      <valueName>profile:CAP-TWP:Event:1.0</valueName>
+      <value>typhoon</value>
+    </eventCode>
+    <effective>2023-10-03T08:30:00+08:00</effective>
+    <onset>2023-10-03T08:30:00+08:00</onset>
+    <expires>2023-10-03T12:30:00+08:00</expires>
+    <senderName>中央氣象署</senderName>
+    <headline>海上颱風警報</headline>
+    <description>
+      <typhoon-info>
+        <section title="警報報數">4</section>
+        <section title="警報類別">SEA</section>
+        <section title="颱風編號">14</section>
+        <section title="颱風資訊">
+          <typhoon_name>KOINU</typhoon_name>
+          <cwa_typhoon_name>小犬</cwa_typhoon_name>
+          <analysis>
+            <time>2023-10-03T00:00:00+00:00</time>
+            <position>20.50,125.10</position>
+            <max_winds unit="m/s">45</max_winds>
+            <gust unit="m/s">55</gust>
+            <pressure unit="hPa">940</pressure>
+            <radius_of_15mps unit="km">250</radius_of_15mps>
+            <scale lang="zh-TW">中度颱風</scale>
+            <scale lang="en">TYPHOON</scale>
+          </analysis>
+          <prediction>
+            <time>2023-10-04T00:00:00+00:00</time>
+            <position>21.80,123.10</position>
+            <max_winds unit="m/s">45</max_winds>
+            <gust unit="m/s">55</gust>
+            <pressure unit="hPa">940</pressure>
+            <radius_of_15mps unit="km">250</radius_of_15mps>
+          </prediction>
+        </section>
+      </typhoon-info>
+      <section title="命名與位置">中度颱風 小犬（國際命名 KOINU）3日8時的中心位置在北緯 20.5 度，東經 125.1 度，即在鵝鑾鼻的東南東方約 460 公里之海面上。</section>
+      <section title="強度與半徑">中心氣壓 940 百帕，近中心最大風速每秒 45 公尺（約每小時 162 公里），相當於 14 級風，瞬間最大陣風每秒 55 公尺（約每小時 198 公里），相當於 16 級風，七級風暴風半徑 250 公里，十級風暴風半徑 80 公里。</section>
+      <section title="移速與預測">以每小時11公里速度，向西北轉西進行，預測4日8時的中心位置在北緯 21.8 度，東經 123.1 度，即在鵝鑾鼻的東方約 230 公里之海面上。</section>
+      <section title="颱風動態">根據最新氣象資料顯示，第14號颱風目前中心在鵝鑾鼻東南東方海面，向西北轉西移動，其暴風圈正逐漸朝巴士海峽接近，對臺灣東半部海面、巴士海峽及臺灣海峽南部將構成威脅。</section>
+      <section title="警戒區域及事項">海上：臺灣東半部海面（含蘭嶼、綠島）、巴士海峽及臺灣海峽南部航行及作業船隻應嚴加戒備。</section>
+      <section title="注意事項">＊今(3)日臺灣附近各海面及巴士海峽風浪逐漸增大，尤其東半部(含蘭嶼、綠島)及恆春半島沿海將有4米以上浪高，基隆北海岸、東半部（含蘭嶼、綠島）、恆春半島及馬祖易有長浪發生，請避免前往海邊活動。＊陸上強風特報:今(3)日蘭嶼、綠島易有10至11級強陣風，上午桃園至雲林、恆春半島沿海空曠地區及澎湖易有8至9級強陣風，基隆北海岸、嘉義至臺南、東半部沿海空曠地區及金門、馬祖亦有較強陣風；下午起桃園至臺南、恆春半島沿海空曠地區及澎湖將有9至10級強陣風，其他沿海空曠地區及金門、馬祖亦有較強陣風，請特別注意。 ＊適逢大潮，漲潮期間花蓮以南及西南部沿海低窪地區需留意海水倒灌及積淹水。＊本警報單之颱風平均半徑約為250公里，詳細特性請參考本署颱風輔助說明(https:// www.cwa.gov.tw/Data/typhoon/TY_PDF.pdf)。</section>
+    </description>
+    <web>https://www.cwa.gov.tw/V8/C/P/Warning/FIFOWS.html</web>
+    <parameter>
+      <valueName>alert_title</valueName>
+      <value>颱風警報</value>
+    </parameter>
+    <parameter>
+      <valueName>severity_level</valueName>
+      <value>海上颱風警報</value>
+    </parameter>
+    <parameter>
+      <valueName>alert_color</valueName>
+      <value>橙色</value>
+    </parameter>
+    <parameter>
+      <valueName>website_color</valueName>
+      <value>255,0,0</value>
+    </parameter>
+    <area>
+      <areaDesc>巴士海峽東部</areaDesc>
+      <polygon>20.00,121.50 20.00,121.00 20.50,121.00 21.00,121.00 21.50,121.00 22.00,121.00 22.00,121.50 22.00,122.00 22.00,122.50 22.00,123.00 21.50,123.00 21.00,123.00 20.50,123.00 20.00,123.00 20.00,122.50 20.00,122.00 20.00,121.50</polygon>
+    </area>
+    <area>
+      <areaDesc>巴士海峽西部</areaDesc>
+      <polygon>20.00,119.50 20.00,119.00 20.50,119.00 21.00,119.00 21.50,119.00 22.00,119.00 22.00,119.50 22.00,120.00 22.00,120.50 22.00,120.69 21.94,120.70 21.93,120.71 21.93,120.72 21.93,120.82 22.00,120.86 22.00,121.00 21.50,121.00 21.00,121.00 20.50,121.00 20.00,121.00 20.00,120.50 20.00,120.00 20.00,119.50</polygon>
+    </area>
+    <area>
+      <areaDesc>臺灣東北部海面</areaDesc>
+      <polygon>23.50,122.00 23.50,121.50 23.70,121.54 23.90,121.60 23.98,121.61 24.00,121.61 24.03,121.62 24.04,121.61 24.06,121.60 24.08,121.61 24.18,121.66 24.21,121.68 24.29,121.74 24.29,121.75 24.30,121.77 24.33,121.76 24.41,121.78 24.43,121.78 24.45,121.80 24.46,121.80 24.46,121.82 24.47,121.83 24.48,121.84 24.50,121.85 24.50,122.00 24.50,122.50 24.50,123.00 24.00,123.00 23.50,123.00 23.50,122.50 23.50,122.00</polygon>
+    </area>
+    <area>
+      <areaDesc>臺灣東南部海面</areaDesc>
+      <polygon>22.00,121.50 22.00,121.00 22.00,120.86 22.04,120.88 22.10,120.88 22.23,120.88 22.28,120.87 22.29,120.87 22.32,120.87 22.34,120.88 22.50,120.94 22.54,120.96 22.57,120.97 22.61,121.00 22.64,121.01 22.66,121.03 22.71,121.08 22.72,121.11 22.72,121.12 22.73,121.13 22.74,121.14 22.76,121.17 22.90,121.26 23.00,121.31 23.09,121.36 23.33,121.45 23.40,121.47 23.41,121.48 23.42,121.48 23.49,121.50 23.50,121.50 23.50,122.00 23.50,122.50 23.50,123.00 23.00,123.00 22.50,123.00 22.00,123.00 22.00,122.50 22.00,122.00 22.00,121.50</polygon>
+    </area>
+    <area>
+      <areaDesc>臺灣海峽南部</areaDesc>
+      <polygon>22.00,120.69 22.00,120.50 22.00,120.00 22.00,119.50 22.00,119.00 22.50,119.00 23.00,119.00 23.00,119.50 23.00,120.00 23.00,120.14 22.95,120.16 22.91,120.17 22.88,120.17 22.79,120.20 22.77,120.21 22.74,120.23 22.68,120.25 22.66,120.24 22.65,120.24 22.64,120.24 22.63,120.25 22.61,120.27 22.60,120.30 22.57,120.31 22.55,120.32 22.54,120.33 22.52,120.33 22.55,120.30 22.54,120.31 22.52,120.33 22.51,120.34 22.50,120.35 22.48,120.38 22.48,120.39 22.48,120.42 22.47,120.43 22.45,120.44 22.43,120.48 22.43,120.49 22.42,120.50 22.42,120.51 22.38,120.55 22.36,120.57 22.31,120.61 22.30,120.62 22.28,120.63 22.18,120.67 22.17,120.68 22.12,120.69 22.10,120.69 22.05,120.69 22.00,120.69</polygon>
+    </area>
+  </info>
+</alert>

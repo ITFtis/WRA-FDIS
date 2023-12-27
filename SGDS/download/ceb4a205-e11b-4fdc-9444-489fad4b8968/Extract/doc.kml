@@ -1,0 +1,31 @@
+ <kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document> 
+	<name>2022-09-26_1500_當日累積雨量</name> 
+		<description></description> 
+		<styleUrl>#hideChildrenStyle</styleUrl> 
+		<Style id="hideChildrenStyle"> 
+			<ListStyle id="hideChildren"> 
+				<listItemType>checkHideChildren</listItemType> 
+			</ListStyle> 
+		</Style> 
+		<NetworkLink> 
+			<open>1</open> 
+ 			<Region> 
+ 				<LatLonAltBox> 
+					<north>25.92</north> 
+					<south>21.51</south> 
+					<east>123.58</east> 
+					<west>119.18</west> 
+				</LatLonAltBox> 
+				<Lod> 
+					<minLodPixels>1</minLodPixels> 
+					<maxLodPixels>880</maxLodPixels> 
+				</Lod> 
+			</Region> 
+			<Link> 
+				<href>0/0/0.kml</href> 
+				<viewRefreshMode>onRegion</viewRefreshMode> 
+			</Link> 
+		</NetworkLink> 
+	</Document> 
+</kml> 

@@ -1,0 +1,36 @@
+﻿body {
+}
+.village-disaster-history > *{
+    margin-bottom:.5rem;
+}
+.village-disaster-history .pin-list-container{
+    position:static !important;
+}
+.village-disaster-history .jsPanel .jsPanel-hdr-l{
+    display:none;
+}
+.village-disaster-history .jsPanel{
+    box-shadow:none;
+    width:100% !important;
+    height:auto !important;
+}
+
+.village-disaster-history .jsPanel .fixed-table-container.fixed-height{
+    height :auto !important;
+    min-height:100px;
+}
+.village-disaster-history .jsPanel .red_status {
+    background-color: transparent;
+    color: red;
+}
+.village-disaster-history .pinctrl .checkbox-glyphicon{
+    display:none;
+}
+.village-disaster-history .legend {
+    display: none;
+}
+.village-disaster-history .jsPanel-content{
+    background-color:white;
+    border:1px #eee solid;
+    padding:0;
+}

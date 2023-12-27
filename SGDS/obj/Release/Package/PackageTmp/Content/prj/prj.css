@@ -1,0 +1,84 @@
+﻿body {
+    --dou-menu-height: 57px;
+}
+.body-content {
+    padding-top: var(--dou-menu-height) !important;
+    min-height: calc( 100% - var(--dou-menu-height) ) !important;
+ }
+.dou-menu {
+    background: #87CEFA;
+    background: -moz-radial-gradient(center, ellipse cover, #6495ED 0%, #87CEFA 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #6495ED), color-stop(100%, #87CEFA));
+    background: -webkit-radial-gradient(center, ellipse cover, #6495ED 0%, #87CEFA 100%);
+    background: -o-radial-gradient(center, ellipse cover, #6495ED 0%, #87CEFA 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #6495ED 0%, #87CEFA 100%);
+    background: radial-gradient(ellipse at center, #6495ED 0%,#87CEFA 100%);
+    background-size: 250% 250%;
+}
+
+.dou-menu.navbar.bg-dark .navbar-nav .dropdown-menu {
+    background-color: #6495ED !important;
+}
+
+.dou-menu .menu-title{
+    /*display:contents;*/
+    display:flex;
+    align-items:center;
+}
+.dou-menu.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.9);
+}
+.dou-menu li > a > img {
+    width: 1.5rem;
+}
+.title-image{
+    height:40px;
+    margin-right:.3rem;
+}
+.title-name {
+    /*color: #1f1f1f;*/
+    color: #00008b;
+    color: white;
+    font-weight: bold;
+    margin-bottom: -.1rem;
+    text-shadow: .5px .5px 0px #ffffff,0px 0px 1px #ffffff;
+    text-shadow: 0.5px 0.5px 2px #00008b, -0.5px -0.5px 2px #00008b;
+    filter: blur(.4px);
+}
+.resize-ctrl {
+    display: none;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    opacity: .3;
+}
+.resize-ctrl:hover{
+    opacity:.8;
+}
+.resize-ctrl.show {
+    display: block;
+}
+body > header .dou-menu .dou-action-controller-root {
+    background-color: rgba(255,255,255,.1);
+    border-radius:.3rem;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu{
+    width:auto;
+}
+@media (max-width: 1200px) {
+    .dou-menu .title-image {
+        width: 36px;
+        object-fit: cover;
+        object-position: left;
+    }
+}
+@media (max-width: 840px) {
+    .dou-menu .title-image{
+        display:none;
+    }
+}
+@media (max-width: 400px) {
+    .dou-menu .user-profile-nav {
+        display:none;
+    }
+}

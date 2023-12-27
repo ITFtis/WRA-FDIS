@@ -1,0 +1,221 @@
+﻿@model IEnumerable<Dou.Models.RoleBase>
+@using Dou.Misc.Extension
+
+@Html.MenuMap()
+
+@{var var_options = "options_" + Guid.NewGuid().ToString().Replace("-", ""); var _containerId = "container_" + Guid.NewGuid().ToString().Replace("-", ""); }
+@Html.DataManagerOptionsJavascript("#" + _containerId, var_options)
+@Html.Raw(Html.MenuJavascript("allmenuitems"))
+<div id="@_containerId"><table></table></div>
+<script>
+    $(document).ready(function () {
+        var permisssionFuncs = {
+            none: { value: 0, glyphicon: "" },
+            add: { value: 1, glyphicon: "glyphicon-plus", use: true },
+            update: { value: 2, glyphicon: "glyphicon-pencil", use: true },
+            delete: { value: 4, glyphicon: "glyphicon-remove", use: true },
+            all: { value: 1 | 2 | 4, glyphicon: "" },
+            ext1: { value: 32, glyphicon: "" },
+            ext2: { value: 64, glyphicon: "" },
+            ext3: { value: 128, glyphicon: "" },
+        };
+        @(var_options).fields.push({
+            title : "隸屬群組",
+            field: "RoleUsers",
+            visible: false,
+            editFormtter: {
+                editContent: function ($_fieldContainer) {//第一層Dom僅能1個
+                    var $_treeContainer = $("<div></div>").appendTo($_fieldContainer);
+                    setTimeout(function () {
+
+
+                        var createRoleCtrl = function () {
+                            var _treeData = [], _defaultPage;
+                            $.each(window.allPermisssionRoles, function () {
+                                _treeData.push({ name: this.Name, value: this });
+                            });
+                            //var $_treeContainer = $('.field-container[data-field=RoleUsers] >.field-content >div');
+                            var $_membershipGroupLists = $('.field-container[data-field=RoleUsers]').parents(".data-edit-form-group").find(".membership-groups-list");
+                            var $_membershipGroupMenus = $('.field-container[data-field=RoleUsers]').parents(".data-edit-form-group").find(".membership-groups-menus");
+
+                            $_treeContainer[0].rTree = new helper.tree.rTree($_treeContainer,
+                                { data: _treeData, selectMode: helper.tree.selectMode.multiple, useline: true, checkeditable: true, fixed: true });
+
+                            //群組清單***********************************************
+                            //var selectedLeafChangetimerggas;
+                            //$_treeContainer.on(helper.tree.event.selectedLeafChange, function (e) {
+                            //}
+
+                            $_treeContainer.on(helper.tree.event.selectedLeafChange, function (e) {
+                                clearTimeout()
+                                if ($_membershipGroupLists.length == 0)
+                                    return;
+                                //var _defaultPage = $_membershipGroupMenus.find(".menu-func.selected").attr("data-value");
+                                $_membershipGroupLists.empty();
+                                $_membershipGroupMenus.empty();
+                                var _s = $_treeContainer[0].rTree.getSelectedLeaf();
+
+                                var _menus = {};
+                                $.each(_s, function () {
+                                    $('<span class="glyphicon glyphicon-user">' + this.value.value.Name + '</span> ').appendTo($_membershipGroupLists);
+                                    if (this.value.value.RolePermissions) {
+                                        $.each(this.value.value.RolePermissions, function () {
+                                            if (_menus[this.Permission]) {
+                                                _menus[this.Permission].Func = (_menus[this.Permission].Func | this.Func);
+                                            }
+                                            else {
+                                                _menus[this.Permission] =$.extend({}, this);
+                                            }
+                                        });
+                                    }
+
+                                });
+
+                                //功能菜單
+                                var _sortmenus = [];
+                                for (var _k in _menus) {
+                                    _sortmenus.push(_menus[_k]);
+                                }
+                                _sortmenus.sort(function (a, b) {
+                                    return a.Permission.localeCompare(b.Permission);
+                                });
+                                var path = [];
+                                //alert(JSON.stringify(allmenuitems));
+                                var appendMenuToCtrl = function (m) {
+                                    if (m.Children) { //非leaf
+                                        $.each(m.Children, function () {
+                                            appendMenuToCtrl(this);
+                                        });
+                                    }
+                                    else {
+                                        var hasp = $.grep(_sortmenus, function (_s) { return _s.Permission == m.Id; });
+                                        if (hasp.length > 0) {//all menus contain RolePermission
+                                            hasp = hasp[0];
+                                            //alert(m.MenuPath);
+                                            console.log(JSON.stringify(m));
+                                            if (m.Attributes && m.Attributes.MenuPath && path.indexOf(m.Attributes.MenuPath) < 0) { //UI新增Path
+                                                $('<div><b>' + m.Attributes.MenuPath + '</d></div>').appendTo($_membershipGroupMenus);
+                                                path.push(m.Attributes.MenuPath);
+                                            }
+                                            //var $_m= $('<div class="col-sm-12"><span class="glyphicon glyphicon-unchecked"></span><span class="glyphicon glyphicon-list-alt">' + this.Permission  + '</span> </div>').
+                                            var $_m = $('<div class="col-sm-12"><span class="glyphicon glyphicon-unchecked"></span><span class="glyphicon glyphicon-list-alt">' + m.Name + '</span> </div>').
+                                                appendTo($('<div class="menu-func" data-value="' + hasp.Permission + '">').appendTo($_membershipGroupMenus));
+                                            var $_func = $('<div class="pull-right">').appendTo($_m);
+                                            for (var _func in permisssionFuncs) {
+
+                                                if (permisssionFuncs[_func].use) {
+                                                    $_func.append('<span class="permission permission-' + _func + '  glyphicon ' + permisssionFuncs[_func].glyphicon + ' ' +
+                                                        ((hasp.Func & permisssionFuncs[_func].value) === permisssionFuncs[_func].value ? '' : ' disabled') +//.disabled代表此作業無此功能
+                                                        '" style="display: inline;">');
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                //alert(allmenuitems.length);
+                                $.each(allmenuitems, function () {
+                                    appendMenuToCtrl(this);
+                                });
+                                //return;
+                                //$.each(_sortmenus, function () {
+                                //    console.log(this.Permission);
+                                //    var mps = this.Permission.split('.'); //0路徑,功能名
+
+                                //    var mpn = mps[mps.length == 2 ? 1 : 0]; //功能名
+                                //    var mpp = mps.length == 2 ? mps[0] : undefined; //路徑
+                                //    console.log('mpp:'+mpp+' mps'+mps);
+                                //    if (mpp && path.indexOf(mpp) < 0) {
+                                //        $('<div><b>' + mps[0] + '</d></div>').appendTo($_membershipGroupMenus);
+                                //        path.push(mpp);
+                                //    }
+                                //    var _p = this;
+                                //    //var $_m= $('<div class="col-sm-12"><span class="glyphicon glyphicon-unchecked"></span><span class="glyphicon glyphicon-list-alt">' + this.Permission  + '</span> </div>').
+                                //    var $_m = $('<div class="col-sm-12"><span class="glyphicon glyphicon-unchecked"></span><span class="glyphicon glyphicon-list-alt">' + mpn + '</span> </div>').
+                                //        appendTo($('<div class="menu-func" data-value="' + this.Permission + '">').appendTo($_membershipGroupMenus));
+                                //    var $_func = $('<div class="pull-right">').appendTo($_m);
+                                //    for (var _func in permisssionFuncs) {
+
+                                //        if (permisssionFuncs[_func].use) {
+                                //            $_func.append('<span class="permission permission-' + _func + '  glyphicon ' + permisssionFuncs[_func].glyphicon + ' ' +
+                                //                ((_p.Func & permisssionFuncs[_func].value) === permisssionFuncs[_func].value ? '' : ' disabled') +//.disabled代表此作業無此功能
+                                //                '" style="display: inline;">');
+                                //        }
+                                //    }
+                                //});
+                                $_membershipGroupMenus.find(".menu-func").off("click").on("click", function () {//預設網頁
+                                    var _old = $(this).hasClass("selected");
+                                    $_membershipGroupMenus.find(".menu-func").removeClass("selected");
+                                    _old ? $(this).removeClass("selected") : $(this).addClass("selected");
+                                    _defaultPage = _old ? undefined : $(this).attr("data-value");
+                                });
+                                if (_defaultPage)//預設網頁
+                                    $_membershipGroupMenus.find(".menu-func[data-value='" + _defaultPage + "']").addClass("selected");
+                            });
+                            //設定值
+                            if ($_treeContainer[0]._value) {
+                                var _roleIds = [];
+                                $.each($_treeContainer[0]._value, function () {
+                                    _roleIds.push(this.RoleId);
+                                });
+                                _roleIds = "|" + _roleIds.join("|") + "|";
+                                $.each($_treeContainer.find(".rtree-leaf"), function () {
+                                    if (_roleIds.indexOf("|" + this.item.value.Id + "|") >= 0) {
+                                        $(this).trigger("click");//觸發selectedLeafChange勾選
+                                    }
+                                });
+                                if ($_treeContainer[0]._User.DefaultPage)//預設網頁
+                                    $_membershipGroupMenus.find(".menu-func[data-value='" + $_treeContainer[0]._User.DefaultPage + "']").trigger("click");//.addClass("selected");
+                            }
+
+                        }
+                        if (window.allPermisssionRoles)
+                            createRoleCtrl();
+                        else {
+                            if (helper)
+                                helper.misc.showBusyIndicator($("body"));
+
+                            $.ajax({
+
+                                url: "@Url.Action("AllRoles", "Role")",/***************************如角色管理controll非Role需修改ControllName*********************************/
+                                datatype: "json",
+                                type: "POST",
+                            }).done(function (result, textStatus, jqXHR) {
+                                if (helper)
+                                    helper.misc.hideBusyIndicator("body");
+                                window.allPermisssionRoles = result;
+                                createRoleCtrl();
+                            })
+                             .fail(function (jqXHR, textStatus, errorThrown) {
+                                 if (helper)
+                                     helper.misc.hideBusyIndicator($("body"));
+                                 alert("讀取資料錯誤!!");
+                             });
+                        }
+                    });
+                },
+                getValue: function ($editEle, row) {
+                    var _roleUser = [];
+                    var _s = $editEle[0].rTree.getSelectedLeaf();
+                    $.each(_s, function () {
+                        _roleUser.push({ UserId: row.Id, RoleId: this.value.value.Id });
+                    });
+
+                    var $_defaultPage = $editEle.parents(".data-edit-form-group").find(".membership-groups-menus .menu-func.selected");
+                    if ($_defaultPage.length > 0)
+                        row.DefaultPage = $_defaultPage.attr("data-value");
+                    else
+                        row.DefaultPage = "";
+                    return _roleUser;
+
+                },
+                setValue: function ($editEle, v, row) {
+                    $editEle[0]._value = v;
+                    $editEle[0]._User = row;
+                }
+            }
+        });
+
+        $("#@_containerId > table").DouEditableTable(@var_options);
+    });
+</script>
+

@@ -1,0 +1,1448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3847AF67-A911-410E-B2CC-75DB8DA2238D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SGDS</RootNamespace>
+    <AssemblyName>SGDS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dou">
+      <HintPath>..\DouBin\Dou.dll</HintPath>
+    </Reference>
+    <Reference Include="DouHelper">
+      <HintPath>..\DouHelperBin\DouHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IotApi">
+      <HintPath>..\IotApiBin\IotApi.exe</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\LoggerBin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\LoggerBin\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSet.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BkTask.cs" />
+    <Compile Include="Controllers\Api\CctvController.cs" />
+    <Compile Include="Controllers\Api\ComplexAlertController.cs" />
+    <Compile Include="Controllers\Api\DataController.cs" />
+    <Compile Include="Controllers\comm\EmbedHtmlController.cs" />
+    <Compile Include="Controllers\comm\SGDSHtmlIFrameMenuDefAttribute.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Manager\LoggerController.cs" />
+    <Compile Include="Controllers\Path\DQueryController.cs" />
+    <Compile Include="Controllers\Path\FAlertController.cs" />
+    <Compile Include="Controllers\Path\FEstimateController.cs" />
+    <Compile Include="Controllers\Path\FQueryController.cs" />
+    <Compile Include="Controllers\Path\SysManagerController.cs" />
+    <Compile Include="Controllers\Prj\AllFStaController.cs" />
+    <Compile Include="Controllers\Prj\ComplexMapController.cs" />
+    <Compile Include="Controllers\Prj\CompositeFController.cs" />
+    <Compile Include="Controllers\Prj\EFMapController.cs" />
+    <Compile Include="Controllers\Prj\DDashboardController.cs" />
+    <Compile Include="Controllers\Prj\FDashboardController.cs" />
+    <Compile Include="Controllers\Prj\FloodReliabilityBetaControllerController.cs" />
+    <Compile Include="Controllers\Prj\FloodReliabilityController.cs" />
+    <Compile Include="Controllers\Prj\FloodReportController.cs" />
+    <Compile Include="Controllers\Prj\FVillageAlertController.cs" />
+    <Compile Include="Controllers\Prj\DFAMapController.cs" />
+    <Compile Include="Controllers\Prj\HistoryFloodController.cs" />
+    <Compile Include="Controllers\Prj\NoModelController.cs" />
+    <Compile Include="Controllers\Prj\RtHydroController.cs" />
+    <Compile Include="Controllers\Manager\RoleController.cs" />
+    <Compile Include="Controllers\Manager\UserController.cs" />
+    <Compile Include="Controllers\Prj\SixBoxSSQueryController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DouModelContextExt.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SixBox\ScreenShot.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\AppSet.json" />
+    <Content Include="Config\Log4netConfig.xml" />
+    <Content Include="Config\Menu.xml" />
+    <Content Include="Config\Test.xml" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\prj\complexmap.css" />
+    <Content Include="Content\prj\rthydro.css" />
+    <Content Include="Content\prj\sub\disasterRecord.css" />
+    <Content Include="Content\prj\sub\floodquery.css" />
+    <Content Include="Content\prj\map.css" />
+    <Content Include="Content\prj\prj.css" />
+    <Content Include="Content\prj\sub\historyFloodArea.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bk.jpg" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\Dou\datetimepicker\css\4.15.35\bootstrap-datetimepicker.css" />
+    <Content Include="Scripts\Dou\datetimepicker\css\4.15.35\bootstrap-datetimepicker.min.css" />
+    <Content Include="Scripts\Dou\datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Scripts\Dou\datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Scripts\Dou\datetimepicker\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Scripts\Dou\datetimepicker\js\4.15.35\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\4.15.35\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\locales.min.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\moment.js" />
+    <Content Include="Scripts\Dou\datetimepicker\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Scripts\Dou\Dou.css" />
+    <Content Include="Scripts\Dou\Dou.js" />
+    <Content Include="Scripts\Dou\Dou.Leftmenu.css" />
+    <Content Include="Scripts\Dou\Dou.Leftmenu.js" />
+    <Content Include="Scripts\Dou\font\bootstrap-icons.css" />
+    <Content Include="Scripts\Dou\font\index.html" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\gis\animation.css" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap.html" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\bootstrap.min.css" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\docs.min.css" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\www-player.css" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\zpOULjyy-n8.html" />
+    <Content Include="Scripts\gis\b3\css\bootstrap-theme.css" />
+    <Content Include="Scripts\gis\b3\css\bootstrap.css" />
+    <Content Include="Scripts\gis\b3\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-locale-all.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-locale-all.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-vue.esm.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-vue.esm.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-vue.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table-vue.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table.css" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table.js" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\bootstrap-table.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\addrbar\bootstrap-table-addrbar.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\addrbar\bootstrap-table-addrbar.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\auto-refresh\bootstrap-table-auto-refresh.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\auto-refresh\bootstrap-table-auto-refresh.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\cookie\bootstrap-table-cookie.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\cookie\bootstrap-table-cookie.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\copy-rows\bootstrap-table-copy-rows.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\copy-rows\bootstrap-table-copy-rows.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\custom-view\bootstrap-table-custom-view.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\custom-view\bootstrap-table-custom-view.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\defer-url\bootstrap-table-defer-url.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\defer-url\bootstrap-table-defer-url.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\editable\bootstrap-table-editable.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\export\bootstrap-table-export.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\bootstrap-table-filter-control.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\bootstrap-table-filter-control.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\bootstrap-table-filter-control.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\bootstrap-table-filter-control.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\utils.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\filter-control\utils.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\fixed-columns\bootstrap-table-fixed-columns.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\fixed-columns\bootstrap-table-fixed-columns.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\fixed-columns\bootstrap-table-fixed-columns.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\fixed-columns\bootstrap-table-fixed-columns.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\group-by-v2\bootstrap-table-group-by.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\group-by-v2\bootstrap-table-group-by.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\group-by-v2\bootstrap-table-group-by.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\group-by-v2\bootstrap-table-group-by.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\i18n-enhance\bootstrap-table-i18n-enhance.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\i18n-enhance\bootstrap-table-i18n-enhance.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\key-events\bootstrap-table-key-events.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\key-events\bootstrap-table-key-events.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\mobile\bootstrap-table-mobile.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\mobile\bootstrap-table-mobile.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\multiple-sort\bootstrap-table-multiple-sort.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\multiple-sort\bootstrap-table-multiple-sort.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\page-jump-to\bootstrap-table-page-jump-to.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\page-jump-to\bootstrap-table-page-jump-to.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\page-jump-to\bootstrap-table-page-jump-to.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\page-jump-to\bootstrap-table-page-jump-to.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\pipeline\bootstrap-table-pipeline.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\pipeline\bootstrap-table-pipeline.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\print\bootstrap-table-print.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\print\bootstrap-table-print.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-columns\bootstrap-table-reorder-columns.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-columns\bootstrap-table-reorder-columns.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-rows\bootstrap-table-reorder-rows.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-rows\bootstrap-table-reorder-rows.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-rows\bootstrap-table-reorder-rows.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\reorder-rows\bootstrap-table-reorder-rows.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\resizable\bootstrap-table-resizable.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\resizable\bootstrap-table-resizable.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\sticky-header\bootstrap-table-sticky-header.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\sticky-header\bootstrap-table-sticky-header.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\sticky-header\bootstrap-table-sticky-header.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\sticky-header\bootstrap-table-sticky-header.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\toolbar\bootstrap-table-toolbar.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\toolbar\bootstrap-table-toolbar.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\treegrid\bootstrap-table-treegrid.js" />
+    <Content Include="Scripts\gis\bootstraptable\extensions\treegrid\bootstrap-table-treegrid.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-bg-BG.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-bg-BG.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-da-DK.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-de-DE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-el-GR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-en-US.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-AR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-CL.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-CL.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-CR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-ES.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-MX.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-NI.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-SP.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-et-EE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-eu-EU.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-eu-EU.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fi-FI.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fi-FI.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-CH.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-CH.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-LU.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-fr-LU.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-he-IL.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hi-IN.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hi-IN.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-id-ID.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-id-ID.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-it-IT.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-lb-LU.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-lb-LU.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nl-BE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nl-BE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sr-Cyrl-RS.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sr-Latn-RS.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sr-Latn-RS.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-th-TH.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-uz-Latn-UZ.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="Scripts\gis\bootstraptable\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\bootstrap-table.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\bootstrap-table.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\bootstrap-table.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\fonts\bootstrap-table.svg" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bulma\bootstrap-table-bulma.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bulma\bootstrap-table-bulma.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bulma\bootstrap-table-bulma.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bulma\bootstrap-table-bulma.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\foundation\bootstrap-table-foundation.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\foundation\bootstrap-table-foundation.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\foundation\bootstrap-table-foundation.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\foundation\bootstrap-table-foundation.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\materialize\bootstrap-table-materialize.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\materialize\bootstrap-table-materialize.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\materialize\bootstrap-table-materialize.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\materialize\bootstrap-table-materialize.min.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\semantic\bootstrap-table-semantic.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\semantic\bootstrap-table-semantic.js" />
+    <Content Include="Scripts\gis\bootstraptable\themes\semantic\bootstrap-table-semantic.min.css" />
+    <Content Include="Scripts\gis\bootstraptable\themes\semantic\bootstrap-table-semantic.min.js" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\dist\bootstrap-slider.js" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\dist\bootstrap-slider.min.js" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\dist\css\bootstrap-slider.css" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\dist\css\bootstrap-slider.min.css" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\js\bootstrap-slider.js" />
+    <Content Include="Scripts\gis\bs5.css" />
+    <Content Include="Scripts\gis\charthelper.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\dev\prettyCheckable.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\dist\prettyCheckable.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\dist\prettyCheckable.min.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\banner.jpg" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\custom.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\icheck.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\arrow-bottom.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\arrow-top.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\header-line.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\icon-fork.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\icon-github.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\icon-lab.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\icon-options.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\ie\icon-star.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-bold.svg" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-regular.svg" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\normalize.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\index.html" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\js\custom.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\js\custom.min.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\js\jquery.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\js\zepto.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites-sfa68604977.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\A-checkbox.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\B-checkbox-focus.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\C-checkbox-checked.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\D-checkbox-checked-focus.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\E-checkbox-disabled.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\F-checkbox-checked-disabled.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\G-radio.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\H-radio-focus.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\I-radio-checked.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\J-radio-checked-focus.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\K-radio-disabled.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\img\sprites\L-radio-checked-disabled.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\css\ion.checkRadio.cloudy.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\css\ion.checkRadio.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\css\ion.checkRadio.dark.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\css\ion.checkRadio.green.css" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\httpionden.comapluginsion.checkRadioen.html.txt" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\img\icr-cloudy-skin.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\img\icr-dark-skin.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\img\icr-green-skin.png" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\js\ion-checkRadio\ion.checkRadio.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\js\ion-checkRadio\ion.checkRadio.min.js" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\js\vendor\jquery-1.10.1.min.js" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\css\font-awesome.css" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\css\font-awesome.min.css" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\gis\ext\arcgis\BoundaryFeatureLayer.js" />
+    <Content Include="Scripts\gis\ext\arcgis\BoundaryFeatureLayer.min.js" />
+    <Content Include="Scripts\gis\ext\baselayer\AMapBaseLayer.js" />
+    <Content Include="Scripts\gis\ext\baselayer\ATaiwanWMTS.js" />
+    <Content Include="Scripts\gis\ext\baselayer\GMapBaseLayer.js" />
+    <Content Include="Scripts\gis\ext\baselayer\GTaiwanWMTS.js" />
+    <Content Include="Scripts\gis\ext\baselayer\LMapBaseLayer.js" />
+    <Content Include="Scripts\gis\ext\baselayer\LTaiwanWMTS.js" />
+    <Content Include="Scripts\gis\ext\baselayer\MapBaseLayer.js" />
+    <Content Include="Scripts\gis\ext\baselayer\TaiwanWMTS.js" />
+    <Content Include="Scripts\gis\ext\boundary\ABoundary.js" />
+    <Content Include="Scripts\gis\ext\boundary\ABoundaryMap.js" />
+    <Content Include="Scripts\gis\ext\boundary\Boundary.js" />
+    <Content Include="Scripts\gis\ext\boundary\BoundaryLayer.js" />
+    <Content Include="Scripts\gis\ext\boundary\BoundaryMap.js" />
+    <Content Include="Scripts\gis\ext\boundary\GBoundary.js" />
+    <Content Include="Scripts\gis\ext\boundary\GBoundaryMap.js" />
+    <Content Include="Scripts\gis\ext\boundary\LBoundary.js" />
+    <Content Include="Scripts\gis\ext\boundary\LBoundaryMap.js" />
+    <Content Include="Scripts\gis\ext\cloud\ACloud.js" />
+    <Content Include="Scripts\gis\ext\cloud\Cloud.js" />
+    <Content Include="Scripts\gis\ext\cloud\Cloud.txt" />
+    <Content Include="Scripts\gis\ext\cloud\CloudBoundaryTool.js" />
+    <Content Include="Scripts\gis\ext\cloud\cwb.js" />
+    <Content Include="Scripts\gis\ext\cloud\GCloud.js" />
+    <Content Include="Scripts\gis\ext\cloud\LCloud.js" />
+    <Content Include="Scripts\gis\ext\cloud\可見光.jpg" />
+    <Content Include="Scripts\gis\ext\cloud\定量降水.jpg" />
+    <Content Include="Scripts\gis\ext\cloud\彩色.jpg" />
+    <Content Include="Scripts\gis\ext\cloud\累計雨量.jpg" />
+    <Content Include="Scripts\gis\ext\cloud\色調強化%28紅外線%29.jpg" />
+    <Content Include="Scripts\gis\ext\cloud\雷達迴波%28無地形%29.jpg" />
+    <Content Include="Scripts\gis\ext\draw\ADrawtool.js" />
+    <Content Include="Scripts\gis\ext\draw\Drawtool.js" />
+    <Content Include="Scripts\gis\ext\draw\GDrawtool.js" />
+    <Content Include="Scripts\gis\ext\draw\LDrawtool.js" />
+    <Content Include="Scripts\gis\ext\export\AExportMap.js" />
+    <Content Include="Scripts\gis\ext\export\ExportMap.js" />
+    <Content Include="Scripts\gis\ext\export\GExportMap.js" />
+    <Content Include="Scripts\gis\ext\export\LExportMap.js" />
+    <Content Include="Scripts\gis\ext\geocode\AddressGeocode.js" />
+    <Content Include="Scripts\gis\ext\geocode\GAddressGeocode.js" />
+    <Content Include="Scripts\gis\ext\geocode\LAddressGeocode.js" />
+    <Content Include="Scripts\gis\ext\google\googleHelper.js" />
+    <Content Include="Scripts\gis\ext\info\ACoordinateInfo.js" />
+    <Content Include="Scripts\gis\ext\info\CoordinateInfo.js" />
+    <Content Include="Scripts\gis\ext\info\GCoordinateInfo.js" />
+    <Content Include="Scripts\gis\ext\info\LCoordinateInfo.js" />
+    <Content Include="Scripts\gis\ext\kml\ALocalKml.js" />
+    <Content Include="Scripts\gis\ext\kml\GLocalKml.js" />
+    <Content Include="Scripts\gis\ext\kml\LLocalKml.js" />
+    <Content Include="Scripts\gis\ext\kml\LocalKml.js" />
+    <Content Include="Scripts\gis\ext\leaflet\Dou.Popop.js" />
+    <Content Include="Scripts\gis\ext\leaflet\Draw.Freeline.js" />
+    <Content Include="Scripts\gis\ext\leaflet\Draw.PolylineLimitPoint.js" />
+    <Content Include="Scripts\gis\ext\leaflet\Draw.TextMarker.js" />
+    <Content Include="Scripts\gis\ext\meter\ABasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\AKmlCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\APolygonBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\APolylineBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\BasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\CctvCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\GBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\GKmlCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\GLBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\GPolygonBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\GPolylineBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\KmlCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\LBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\LFeatureBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\LKmlCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\LPolygonBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\LPolylineBasePinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\PinCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\PolygonCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\PolylineCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\RainCtrl.js" />
+    <Content Include="Scripts\gis\ext\meter\WaterCtrl.js" />
+    <Content Include="Scripts\gis\ext\position\ABasePosition.js" />
+    <Content Include="Scripts\gis\ext\position\BasePosition.js" />
+    <Content Include="Scripts\gis\ext\position\DistrictPosition.js" />
+    <Content Include="Scripts\gis\ext\position\GBasePosition.js" />
+    <Content Include="Scripts\gis\ext\position\LBasePosition.js" />
+    <Content Include="Scripts\gis\ext\raster\graster.js" />
+    <Content Include="Scripts\gis\ext\raster\raster.js" />
+    <Content Include="Scripts\gis\ext\typh\ATyph.js" />
+    <Content Include="Scripts\gis\ext\typh\GTyph.js" />
+    <Content Include="Scripts\gis\ext\typh\LTyph.js" />
+    <Content Include="Scripts\gis\ext\typh\Typh-單一預報機關.js" />
+    <Content Include="Scripts\gis\ext\typh\Typh.js" />
+    <Content Include="Scripts\gis\flot\curvedLines.js" />
+    <Content Include="Scripts\gis\flot\excanvas.js" />
+    <Content Include="Scripts\gis\flot\excanvas.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.colorhelpers.js" />
+    <Content Include="Scripts\gis\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.animator.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.animator.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.axislabels.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.barnumbers.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.canvas.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.caption.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.categories.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.dashes.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.image.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.image.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.navigate.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.pie.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.selection.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.selection.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.symbol.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.threshold.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.time.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.time.min.js" />
+    <Content Include="Scripts\gis\flot\jquery.flot.tooltip.js" />
+    <Content Include="Scripts\gis\golifeExt.css" />
+    <Content Include="Scripts\gis\google\geoxml3.js" />
+    <Content Include="Scripts\gis\google\geoxml3_gxParse_kmz.js" />
+    <Content Include="Scripts\gis\google\markerclusterer.js" />
+    <Content Include="Scripts\gis\google\markerclusterimage\conv30.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\conv40.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\conv50.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\heart30.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\heart40.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\heart50.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\m1.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\m2.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\m3.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\m4.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\m5.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\people35.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\people45.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\people55.png" />
+    <Content Include="Scripts\gis\google\markerclusterimage\pin.png" />
+    <Content Include="Scripts\gis\google\markerwithlabel.js" />
+    <Content Include="Scripts\gis\google\ZipFile.complete.js" />
+    <Content Include="Scripts\gis\helper.js" />
+    <Content Include="Scripts\gis\images\add_row.png" />
+    <Content Include="Scripts\gis\images\blue-pushpin.png" />
+    <Content Include="Scripts\gis\images\Bounds.png" />
+    <Content Include="Scripts\gis\images\camera.png" />
+    <Content Include="Scripts\gis\images\check1.png" />
+    <Content Include="Scripts\gis\images\CheckBox-Unchecked.png" />
+    <Content Include="Scripts\gis\images\checked.png" />
+    <Content Include="Scripts\gis\images\checked2.png" />
+    <Content Include="Scripts\gis\images\circleround_glass.png" />
+    <Content Include="Scripts\gis\images\circleround_videoinset.png" />
+    <Content Include="Scripts\gis\images\clock_base.png" />
+    <Content Include="Scripts\gis\images\Colour.png" />
+    <Content Include="Scripts\gis\images\Draw.png" />
+    <Content Include="Scripts\gis\images\Eraser.png" />
+    <Content Include="Scripts\gis\images\favicon.ico" />
+    <Content Include="Scripts\gis\images\FitToAize.png" />
+    <Content Include="Scripts\gis\images\Get Started Board_layer_r5_c100.png.png" />
+    <Content Include="Scripts\gis\images\ico-no.png" />
+    <Content Include="Scripts\gis\images\ico-yes.png" />
+    <Content Include="Scripts\gis\images\Icon-checked.png" />
+    <Content Include="Scripts\gis\images\inputIcon.png" />
+    <Content Include="Scripts\gis\images\lassoants.png" />
+    <Content Include="Scripts\gis\images\Line.png" />
+    <Content Include="Scripts\gis\images\loading\loading.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_black.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_black1.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_black2.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_black_s.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_blue.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_blue1.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_orange.gif" />
+    <Content Include="Scripts\gis\images\loading\loading_red.gif" />
+    <Content Include="Scripts\gis\images\loading_black.gif" />
+    <Content Include="Scripts\gis\images\lock.png" />
+    <Content Include="Scripts\gis\images\logo.jpg" />
+    <Content Include="Scripts\gis\images\Logo.png" />
+    <Content Include="Scripts\gis\images\marker-icon.png" />
+    <Content Include="Scripts\gis\images\meter\Camera.png" />
+    <Content Include="Scripts\gis\images\meter\green.png" />
+    <Content Include="Scripts\gis\images\meter\orange.png" />
+    <Content Include="Scripts\gis\images\meter\pump-抽水中.png" />
+    <Content Include="Scripts\gis\images\meter\pump-正常.png" />
+    <Content Include="Scripts\gis\images\meter\pump-通訊故障.png" />
+    <Content Include="Scripts\gis\images\meter\red.png" />
+    <Content Include="Scripts\gis\images\meter\water_blue.PNG" />
+    <Content Include="Scripts\gis\images\meter\water_dark.PNG" />
+    <Content Include="Scripts\gis\images\meter\water_green.PNG" />
+    <Content Include="Scripts\gis\images\meter\water_orange.PNG" />
+    <Content Include="Scripts\gis\images\meter\water_red.PNG" />
+    <Content Include="Scripts\gis\images\meter\水位站-g - 複製.png" />
+    <Content Include="Scripts\gis\images\meter\水位站-g.png" />
+    <Content Include="Scripts\gis\images\meter\水位站-gr.png" />
+    <Content Include="Scripts\gis\images\meter\水位站-o.png" />
+    <Content Include="Scripts\gis\images\meter\水位站-r.png" />
+    <Content Include="Scripts\gis\images\meter\水位站-y.png" />
+    <Content Include="Scripts\gis\images\meter\水庫正常.png" />
+    <Content Include="Scripts\gis\images\meter\水庫洩洪.png" />
+    <Content Include="Scripts\gis\images\meter\水庫無資料.PNG" />
+    <Content Include="Scripts\gis\images\meter\水庫自由溢流.png" />
+    <Content Include="Scripts\gis\images\meter\水庫調節洩洪.png" />
+    <Content Include="Scripts\gis\images\meter\水庫預計洩洪.png" />
+    <Content Include="Scripts\gis\images\meter\淹水警報站-正常.png" />
+    <Content Include="Scripts\gis\images\meter\淹水警報站-淹水.png" />
+    <Content Include="Scripts\gis\images\meter\淹水警報站-警戒.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-大豪雨.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-大雨.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-正常.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-無資料.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-豪雨.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站-超大豪雨.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_大豪雨_橘.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_大雨_綠.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_正常_藍.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_無資料_灰.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_豪雨_黃.png" />
+    <Content Include="Scripts\gis\images\meter\雨量站_超大豪雨_紅.png" />
+    <Content Include="Scripts\gis\images\Pan.png" />
+    <Content Include="Scripts\gis\images\Pin.png" />
+    <Content Include="Scripts\gis\images\Polygon.png" />
+    <Content Include="Scripts\gis\images\polygon_triangle_filled.png" />
+    <Content Include="Scripts\gis\images\polygon_unfilled.png" />
+    <Content Include="Scripts\gis\images\refresh.png" />
+    <Content Include="Scripts\gis\images\refreshIcon.png" />
+    <Content Include="Scripts\gis\images\Restore.PNG" />
+    <Content Include="Scripts\gis\images\share.png" />
+    <Content Include="Scripts\gis\images\unchecked.png" />
+    <Content Include="Scripts\gis\images\village.png" />
+    <Content Include="Scripts\gis\images\zoom.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_flat_0_888888_40x100.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_glass_25_e1f0f5_1x400.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_glass_55_444444_1x400.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-icons_309bbf_256x240.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-icons_bf3030_256x240.png" />
+    <Content Include="Scripts\gis\jquery\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\gis\jquery\jquery-1.12.3.js" />
+    <Content Include="Config\Menu.json" />
+    <None Include="Scripts\gis\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\gis\jquery\jquery-1.9.1.js" />
+    <Content Include="Scripts\gis\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\gis\jquery\jquery-ui-1.10.4.css" />
+    <Content Include="Scripts\gis\jquery\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\gis\jquery\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\gis\jspanel\images\icon-sprite.jpg" />
+    <Content Include="Scripts\gis\jspanel\images\resize-handle.png" />
+    <Content Include="Scripts\gis\jspanel\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\gis\jspanel\jquery.jspanel-1.10.0.js" />
+    <Content Include="Scripts\gis\jspanel\jquery.jspanel-1.10.0.min.js" />
+    <Content Include="Scripts\gis\jspanel\jsPanel.css" />
+    <Content Include="Scripts\gis\leafletExt.css" />
+    <Content Include="Scripts\gis\leaflet\Control.MiniMap.min.js" />
+    <Content Include="Scripts\gis\leaflet\dou-MaskRectGrid.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Control.Draw.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Control.Draw.min.js" />
+    <Content Include="Scripts\gis\leaflet\draw\copyright.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\DrawToolbar.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Circle.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.CircleMarker.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Feature.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Marker.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Polygon.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Polyline.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.Rectangle.js" />
+    <Content Include="Scripts\gis\leaflet\draw\draw\handler\Draw.SimpleShape.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\EditToolbar.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.Circle.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.CircleMarker.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.Marker.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.Poly.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.Rectangle.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\Edit.SimpleShape.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\EditToolbar.Delete.js" />
+    <Content Include="Scripts\gis\leaflet\draw\edit\handler\EditToolbar.Edit.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\bundle.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\bundle.min.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\GeometryUtil.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\LatLngUtil.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\LineUtil.Intersect.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\Polygon.Intersect.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\Polyline.Intersect.js" />
+    <Content Include="Scripts\gis\leaflet\draw\ext\TouchEvents.js" />
+    <Content Include="Scripts\gis\leaflet\draw\images\spritesheet-2x.png" />
+    <Content Include="Scripts\gis\leaflet\draw\images\spritesheet.png" />
+    <Content Include="Scripts\gis\leaflet\draw\images\spritesheet.svg" />
+    <Content Include="Scripts\gis\leaflet\draw\leaflet.draw.css" />
+    <Content Include="Scripts\gis\leaflet\draw\Leaflet.Draw.Event.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Leaflet.Draw.Event.min.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Leaflet.draw.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Leaflet.draw.min.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Toolbar.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Toolbar.min.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Tooltip.js" />
+    <Content Include="Scripts\gis\leaflet\draw\Tooltip.min.js" />
+    <Content Include="Scripts\gis\leaflet\L.Map.Sync.js" />
+    <Content Include="Scripts\gis\leaflet\L.Polyline.Arc.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\.gitignore" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\build\rollup.config.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\dist\leaflet-kmz-src.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\dist\leaflet-kmz.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\src\GridLayer.GeoJSON.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\src\index.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\src\KMZLoader.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\src\KMZMarker.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\src\KMZParser.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-omnivore-20200327.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-omnivore.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-omnivore.min-old.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet-omnivore.min.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet.css" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.draw.js" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.draw.min.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet.filelayer.js" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\demo.html" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\demo.png" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\glyph-marker-icon.png" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\glyph-marker-icon.svg" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\Leaflet.Icon.Glyph.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet.js" />
+    <Content Include="Scripts\gis\leaflet\leaflet.markercluster.js" />
+    <Content Include="Scripts\gis\leaflet\scale\Leaflet.GraphicScale.min.css" />
+    <Content Include="Scripts\gis\leaflet\scale\Leaflet.GraphicScale.min.js" />
+    <Content Include="Scripts\gis\leaflet\scale\readme.txt" />
+    <Content Include="Scripts\gis\leaflet\turf.min.js" />
+    <Content Include="Scripts\gis\leaflet\turf_ThuOct252018.min.js" />
+    <Content Include="Scripts\gis\Main.css" />
+    <Content Include="Scripts\gis\Main.js" />
+    <Content Include="Scripts\gis\Main.min.txt" />
+    <Content Include="Scripts\gis\other\ajaxfileupload.js" />
+    <Content Include="Scripts\gis\other\bluebird.min.js" />
+    <Content Include="Scripts\gis\other\bootstrap-contextmenu.js" />
+    <Content Include="Scripts\gis\other\chosen\chosen-sprite.png" />
+    <Content Include="Scripts\gis\other\chosen\chosen.css" />
+    <Content Include="Scripts\gis\other\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\gis\other\chosen\chosen.jquery.min.js" />
+    <Content Include="Scripts\gis\other\chosen\chosen.min.css" />
+    <Content Include="Scripts\gis\other\colpick.css" />
+    <Content Include="Scripts\gis\other\colpick.js" />
+    <Content Include="Scripts\gis\other\dom-to-image.min.js" />
+    <Content Include="Scripts\gis\other\dropzone.js" />
+    <Content Include="Scripts\gis\other\FileSaver.min.js" />
+    <Content Include="Scripts\gis\other\geoxml3kmz.js" />
+    <Content Include="Scripts\gis\other\highcharts.js" />
+    <Content Include="Scripts\gis\other\html2canvas-ie.js" />
+    <Content Include="Scripts\gis\other\html2canvas-svg-ie.js" />
+    <Content Include="Scripts\gis\other\html2canvas.js" />
+    <Content Include="Scripts\gis\other\imgareaselect-default.css" />
+    <Content Include="Scripts\gis\other\jquery.imgareaselect.js" />
+    <Content Include="Scripts\gis\other\jquery.imgareaselect.min.js" />
+    <Content Include="Scripts\gis\other\jquery.imgareaselect.pack.js" />
+    <Content Include="Scripts\gis\other\jquery.mask.js" />
+    <Content Include="Scripts\gis\other\jquery.mask.min.js" />
+    <Content Include="Scripts\gis\other\jquery.ui-contextmenu.js" />
+    <Content Include="Scripts\gis\other\jquery.ui-contextmenu.min.js" />
+    <Content Include="Scripts\gis\other\jszip-utils.js" />
+    <Content Include="Scripts\gis\other\jszip.js" />
+    <Content Include="Scripts\gis\other\modernizr-2.6.2.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.es.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.es.min.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.node.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.node.min.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.umd.js" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.umd.min.js" />
+    <Content Include="Scripts\gis\other\pdf\polyfills.es.js" />
+    <Content Include="Scripts\gis\other\pdf\polyfills.umd.js" />
+    <Content Include="Scripts\gis\other\respond.js" />
+    <Content Include="Scripts\gis\other\respond.min.js" />
+    <Content Include="Scripts\gis\other\shp.js" />
+    <Content Include="Scripts\gis\other\tableDragger\table-dragger.js" />
+    <Content Include="Scripts\gis\other\tableDragger\table-dragger.min.js" />
+    <Content Include="Scripts\gis\other\xlsx\xlsx.bundle.js" />
+    <Content Include="Scripts\gis\other\xlsx\xlsx.full.min.js" />
+    <Content Include="Scripts\gis\other\xmlToJSON.js" />
+    <Content Include="Scripts\gis\other\ZipFile.js" />
+    <Content Include="Scripts\gis\resource\Basin.xml" />
+    <Content Include="Scripts\gis\resource\County.xml" />
+    <Content Include="Scripts\gis\resource\RVB.xml" />
+    <Content Include="Scripts\gis\resource\TOWNSHIP.xml" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select-b5.min.css" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select-b5.min.js" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.css" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.css.map" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.js" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.js.map" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.min.css" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.min.js" />
+    <Content Include="Scripts\gis\select\bselect\bootstrap-select.min.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-am_ET.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-am_ET.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-am_ET.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ar_AR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-bg_BG.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-cs_CZ.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-da_DK.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-de_DE.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-en_US.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_CL.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_ES.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_ES.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-es_ES.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-et_EE.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-et_EE.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-et_EE.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-eu.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-eu.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fa_IR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fi_FI.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fr_FR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hr_HR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hr_HR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hu_HU.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-id_ID.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-it_IT.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ja_JP.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ja_JP.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-kh_KM.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-kh_KM.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ko_KR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lt_LT.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lv_LV.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lv_LV.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nb_NO.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nl_NL.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pl_PL.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_BR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_PT.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ro_RO.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ru_RU.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sk_SK.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sl_SI.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sr_SP.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sr_SP.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sr_SP.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sv_SE.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-th_TH.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-th_TH.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-th_TH.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-tr_TR.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ua_UA.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-vi_VN.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-vi_VN.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_CN.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_TW.js.map" />
+    <Content Include="Scripts\gis\select\bselect\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\prj\complexmap.js" />
+    <Content Include="Scripts\prj\createMapHelper.js" />
+    <Content Include="Scripts\prj\data.js" />
+    <Content Include="Scripts\prj\dfa.js" />
+    <Content Include="Scripts\prj\ef.js" />
+    <Content Include="Scripts\prj\floodPreventionPoint.js" />
+    <Content Include="Scripts\prj\forecastVillageAlertInfo.js" />
+    <Content Include="Scripts\prj\historyFlood.js" />
+    <Content Include="Scripts\prj\meterImpl.js" />
+    <Content Include="Scripts\prj\rthydro.js" />
+    <Content Include="Scripts\prj\sixboxss.js" />
+    <Content Include="Scripts\prj\statistics\facilityStatisticsTable.js" />
+    <Content Include="Scripts\prj\statistics\floodStatisticsTable.js" />
+    <Content Include="Scripts\prj\statistics\landUseDistrictStatisticsTable.js" />
+    <Content Include="Scripts\prj\sub\basinSelect.js" />
+    <Content Include="Scripts\prj\sub\countySelect.js" />
+    <Content Include="Scripts\prj\sub\estimateFlood.js" />
+    <Content Include="Scripts\prj\sub\floodQuery.js" />
+    <Content Include="Scripts\prj\sub\handDrawFlood.js" />
+    <Content Include="Scripts\prj\sub\historyflood\disasterRecord.js" />
+    <Content Include="Scripts\prj\sub\historyflood\historyFloodArea.js" />
+    <Content Include="Scripts\prj\sub\historyflood\the3rdFloodPotentials.js" />
+    <Content Include="Scripts\prj\sub\rthydro\cctv.js" />
+    <Content Include="Scripts\prj\sub\rthydro\fsensor.js" />
+    <Content Include="Scripts\prj\sub\rthydro\fsta.js" />
+    <Content Include="Scripts\prj\sub\rthydro\rain.js" />
+    <Content Include="Scripts\prj\sub\rthydro\rdisaster.js" />
+    <Content Include="Scripts\prj\sub\rthydro\water.js" />
+    <Content Include="Scripts\prj\sub\rvbRiverSelect.js" />
+    <Content Include="Scripts\prj\sub\unitCode.js" />
+    <Content Include="Scripts\prj\sub\villageAlertPolygon.js" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Wave.html" />
+    <Content Include="Wave2.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\DouEditProfile.cshtml" />
+    <Content Include="Views\Shared\DouLogin.cshtml" />
+    <Content Include="Views\Shared\DouLoginRemember.cshtml" />
+    <Content Include="Views\Shared\DouMenuPartial.cshtml" />
+    <Content Include="Views\Shared\DouMenuPartial_b3.cshtml" />
+    <Content Include="Views\Shared\DouResetPassword.cshtml" />
+    <Content Include="Views\Shared\DouRoleEditFormLayout.cshtml" />
+    <Content Include="Views\Shared\DouRolePartial.cshtml" />
+    <Content Include="Views\Shared\DouUserEditFormLayout.cshtml" />
+    <Content Include="Views\Shared\DouUserPartial.cshtml" />
+    <Content Include="Views\Shared\DouUserProfilePartial.cshtml" />
+    <Content Include="Views\Shared\HtmlIFramePartial.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\MenuPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout_b3.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Logger\Index.cshtml" />
+    <Content Include="Views\RtHydro\Index.cshtml" />
+    <Content Include="Views\Shared\MapPartial.cshtml" />
+    <Content Include="Views\DFAMap\Index.cshtml" />
+    <Content Include="Views\EFMap\Index.cshtml" />
+    <Content Include="Views\FVillageAlert\Index.cshtml" />
+    <Content Include="Views\HistoryFlood\Index.cshtml" />
+    <Content Include="Views\Shared\SiteRootScriptPartial.cshtml" />
+    <Content Include="Views\ComplexMap\Index.cshtml" />
+    <Content Include="Views\SixBoxSSQuery\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\prj\sgds\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\AllFSta\" />
+    <Folder Include="Views\FloodReliabilityBetaController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\Dou\datetimepicker\js\moment.min.js.map" />
+    <Content Include="Scripts\Dou\font\bootstrap-icons.json" />
+    <Content Include="Scripts\Dou\font\bootstrap-icons.scss" />
+    <Content Include="Scripts\Dou\font\fonts\bootstrap-icons.woff" />
+    <Content Include="Scripts\Dou\font\fonts\bootstrap-icons.woff2" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\analytics.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\base.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\bootstrap.min.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\carbon.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\cast_sender.js%281%29.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\cast_sender.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\cfae0bcc9eeb2652dd375b40461352efdb6057ba" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\docs.min.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\embed.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\ie-emulation-modes-warning.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\ie10-viewport-bug-workaround.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\jquery.min.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\js" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\remote.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\script.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\tN1enqu6RJ1U6ue374tm5QKBTitrA3t700Hvd2dfLPU.js.下載" />
+    <Content Include="Scripts\gis\b3\Components · Bootstrap_files\www-embed-player.js.下載" />
+    <Content Include="Scripts\gis\b3\config.json" />
+    <Content Include="Scripts\gis\b3\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\gis\b3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\gis\b3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\gis\b3\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\fonts\bootstrap-table.eot" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\fonts\bootstrap-table.ttf" />
+    <Content Include="Scripts\gis\bootstraptable\themes\bootstrap-table\fonts\bootstrap-table.woff" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\less\bootstrap-slider.less" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\less\rules.less" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\less\variables.less" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\sass\bootstrap-slider.scss" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\sass\_mixins.scss" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\sass\_rules.scss" />
+    <Content Include="Scripts\gis\bootstrap\bootstrap-slider\src\sass\_variables.scss" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\dev\prettyCheckable.js.bak" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\dev\prettyCheckable.scss" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\custom.styl" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-bold.eot" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-bold.ttf" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-bold.woff" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-regular.eot" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-regular.ttf" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\icheck\css\montserrat-regular.woff" />
+    <Content Include="Scripts\gis\checkbox__nouse_20220518\ion\PSD\icr-all-skin.psd" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\animated.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\bordered-pulled.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\core.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\fixed-width.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\font-awesome.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\icons.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\larger.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\list.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\mixins.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\path.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\rotated-flipped.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\stacked.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\less\variables.less" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\font-awesome.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_animated.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_core.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_fixed-width.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_icons.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_larger.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_list.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_mixins.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_path.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_stacked.scss" />
+    <Content Include="Scripts\gis\css_nouse_20220518\metro\scss\_variables.scss" />
+    <Content Include="Scripts\gis\google\markerclusterimage\markerclusterimage.zip" />
+    <Content Include="Scripts\gis\jquery\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\gis\jspanel\jquery.jspanel-1.10.0.min.js.map" />
+    <Content Include="Scripts\gis\jspanel\jspanel.zip" />
+    <Content Include="Scripts\gis\kml\county.kmz" />
+    <Content Include="Scripts\gis\kml\town.kmz" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\.jshintrc" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\dist\leaflet-kmz-src.js.map" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\dist\leaflet-kmz.js.map" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\LICENSE" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\package-lock.json" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\package.json" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\README.md" />
+    <Content Include="Scripts\gis\leaflet\leaflet-kmz-master\_config.yml" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\package.json" />
+    <Content Include="Scripts\gis\leaflet\Leaflet.Icon.Glyph\README.md" />
+    <Content Include="Scripts\gis\leaflet\leaflet.js.map" />
+    <Content Include="Scripts\gis\leaflet\leaflet.markercluster.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.es.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.es.min.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.node.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.node.min.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.umd.js.map" />
+    <Content Include="Scripts\gis\other\pdf\jspdf.umd.min.js.map" />
+    <Content Include="Scripts\gis\other\tableDragger\table-dragger.js.map" />
+    <Content Include="Scripts\gis\README.md" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62820</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:45953/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

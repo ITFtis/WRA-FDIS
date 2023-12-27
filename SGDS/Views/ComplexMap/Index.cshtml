@@ -1,0 +1,50 @@
+﻿<link href="~/Content/prj/complexmap.css" rel="stylesheet">
+@Scripts.Render("~/Scripts/prj/complexmap")
+
+<style>
+</style>
+<div class="container-title w-100 con">
+    <div class="event-container row row-cols-auto">
+        <div class="col btn-group mx-4" role="group" aria-label="">
+            <input type="radio" class="btn-check" name="timetyperadio" id="timetyperadio1" autocomplete="off" value="0" checked>
+            <label class="btn btn-outline-success" for="timetyperadio1">即 時</label>
+            <input type="radio" class="btn-check" name="timetyperadio" id="timetyperadio3" autocomplete="off" value="1">
+            <label class="btn btn-outline-success" for="timetyperadio3">歷 時</label>
+        </div>
+        <div class="col row ctrl-part">
+            <div class="col"><select class="form-control wra-event-year"></select></div>
+            <div class="col">
+                <select class="form-control wra-events"></select>
+            </div>
+            <div class="col">
+                <select class="form-control wra-time"></select>
+            </div>
+            <div class="col-2 btn btn-danger  query-btn">
+                查詢
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="complex-container container-fluid d-flex">*@
+<div class="complex-container container-fluid row">
+
+    <div class="left-container  map-container col-sm-6">
+        <div class="map-desc">
+            <div class="title"><label>水利署淹水警戒</label></div>
+            <div class="dt"><label>時間:</label><label class="t">---</label></div>
+            <div class="meter data-pin-ctrl"></div>
+        </div>
+        <div id="map-l" class="map"></div>
+
+    </div>
+    <div class="right-container  map-container col-sm-6">
+        <div class="map-desc">
+            <div class="title"><label>複合式淹水預警指標</label></div>
+            <div class="dt"><label>時間:</label><label class="t">---</label></div>
+            <div class="meter data-pin-ctrl"></div>
+        </div>
+        <div id="map-r" class="map"></div>
+
+    </div>
+</div>
+

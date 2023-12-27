@@ -1,0 +1,11 @@
+2023-11-15 15:17:26,713  INFO [1] (MvcApplication:28) - DouImp Application_Start
+2023-11-15 15:17:26,728  INFO [1] (BkTask:34) - 啟動BkTask背景
+2023-11-15 15:17:27,768  INFO [16] (BkTask+<>c__DisplayClass11_0:151) - 啟動計算複合淹水
+2023-11-15 15:17:27,771  INFO [15] (BkTask+<>c__DisplayClass12_0:217) - 抓fhy取得淹水警示資料
+2023-11-15 15:17:28,003  INFO [15] (BkTask+<>c__DisplayClass12_0:243) - 複合淹水下次執行時間60000毫秒, 最新rain時間0001/1/1 上午 12:00:00
+2023-11-15 15:17:35,229  INFO [16] (BkTask+<>c__DisplayClass11_0:179) - 複合淹水下次執行時間60000毫秒, 最新rain時間2023/11/15 下午 03:07:01
+2023-11-15 21:29:20,775  INFO [1] (MvcApplication:28) - DouImp Application_Start
+2023-11-15 21:29:20,791  INFO [1] (BkTask:34) - 啟動BkTask背景
+2023-11-15 21:29:21,887  INFO [16] (BkTask+<>c__DisplayClass12_0:217) - 抓fhy取得淹水警示資料
+2023-11-15 21:29:21,888  INFO [12] (BkTask+<>c__DisplayClass11_0:151) - 啟動計算複合淹水
+2023-11-15 21:29:22,397  INFO [16] (BkTask+<>c__DisplayClass12_0:243) - 複合淹水下次執行時間60000毫秒, 最新rain時間0001/1/1 上午 12:00:00

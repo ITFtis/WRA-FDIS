@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>CWA-Weather_typhoon-warning_2023100611206406</identifier>
+  <sender>weather@cwa.gov.tw</sender>
+  <sent>2023-10-06T11:20:42+08:00</sent>
+  <status>Actual</status>
+  <msgType>Cancel</msgType>
+  <scope>Public</scope>
+  <references>weather@cwa.gov.tw,CWA-Weather_typhoon-warning_2023100608256404,2023-10-06T08:25:48+08:00</references>
+  <info>
+    <language>zh-TW</language>
+    <category>Met</category>
+    <event>颱風</event>
+    <urgency>Past</urgency>
+    <severity>Minor</severity>
+    <certainty>Observed</certainty>
+    <eventCode>
+      <valueName>profile:CAP-TWP:Event:1.0</valueName>
+      <value>typhoon</value>
+    </eventCode>
+    <effective>2023-10-06T11:30:00+08:00</effective>
+    <onset>2023-10-06T11:30:00+08:00</onset>
+    <expires>2023-10-06T11:40:00+08:00</expires>
+    <senderName>中央氣象署</senderName>
+    <headline>解除颱風警報</headline>
+    <description>
+      <typhoon-info>
+        <section title="警報報數">29</section>
+        <section title="警報類別">END</section>
+        <section title="颱風編號">14</section>
+        <section title="颱風資訊">
+          <typhoon_name>KOINU</typhoon_name>
+          <cwa_typhoon_name>小犬</cwa_typhoon_name>
+          <analysis>
+            <time>2023-10-06T03:00:00+00:00</time>
+            <position>21.70,117.20</position>
+            <max_winds unit="m/s">33</max_winds>
+            <gust unit="m/s">43</gust>
+            <pressure unit="hPa">970</pressure>
+            <radius_of_15mps unit="km">150</radius_of_15mps>
+            <scale lang="zh-TW">中度颱風</scale>
+            <scale lang="en">TYPHOON</scale>
+          </analysis>
+          <prediction>
+            <time>2023-10-07T03:00:00+00:00</time>
+            <position>21.60,115.50</position>
+            <max_winds unit="m/s">30</max_winds>
+            <gust unit="m/s">38</gust>
+            <pressure unit="hPa">975</pressure>
+            <radius_of_15mps unit="km">120</radius_of_15mps>
+          </prediction>
+        </section>
+      </typhoon-info>
+      <section title="命名與位置">中度颱風 小犬（國際命名 KOINU）6日11時的中心位置在北緯 21.7 度，東經 117.2 度，即在鵝鑾鼻的西方約 380 公里之海面上。</section>
+      <section title="強度與半徑">中心氣壓 970 百帕，近中心最大風速每秒 33 公尺（約每小時 119 公里），相當於 12 級風，瞬間最大陣風每秒 43 公尺（約每小時 155 公里），相當於 14 級風，七級風暴風半徑 150 公里，十級風暴風半徑 50 公里。</section>
+      <section title="移速與預測">以每小時8公里速度，向西南西轉西進行，預測7日11時的中心位置在北緯 21.6 度，東經 115.5 度，即在香港的東南東方約 160 公里之海面上。</section>
+      <section title="颱風動態">根據最新氣象資料顯示，第14號颱風中心在鵝鑾鼻西方海面，向西南西轉西移動，對臺灣海峽、巴士海峽及東沙島海面威脅已解除。</section>
+      <section title="豪雨特報">颱風外圍環流影響，易有短延時強降雨，今(6)日臺東縣及恆春半島有局部大雨或豪雨，基隆北海岸、屏東、宜蘭、花蓮地區及蘭嶼、綠島有局部大雨發生的機率，山區請慎防坍方、落石，低窪地區請慎防積淹水。</section>
+      <section title="注意事項">＊今(6)日臺灣附近各海面及巴士海峽風浪仍大，沿海易有長浪，尤其西半部及澎湖、金門、馬祖沿海易有3至4米浪高，海邊活動請注意安全。＊颱風外圍環流影響，今(6)日金門及馬祖仍有8至9級強陣風，基隆北海岸、桃園、高雄、屏東沿海空曠地區及澎湖亦有較強陣風，請注意。＊自10月3日0時至6日11時出現較大累積雨量如下:臺北市擎天崗461.5毫米，臺東縣利嘉林道452毫米，宜蘭縣太平山403毫米，屏東縣大漢山396毫米，花蓮縣六十石山361毫米，臺中市南湖圈谷314.5毫米，新北市桶後263毫米，桃園市拉拉山213毫米；出現較大陣風區域如下：蘭嶼17級以上，恆春14級，東吉島13級，大武、臺南、新屋11級，成功、澎湖、彭佳嶼10級。＊本警報單之颱風平均半徑約為150公里，詳細特性請參考本署颱風輔助說明(https:// www.cwa.gov.tw/Data/typhoon/TY_PDF.pdf)。＊此為第14號颱風警報最後一次報告。</section>
+    </description>
+    <instruction />
+    <web>https://www.cwa.gov.tw/V8/C/P/Warning/FIFOWS.html</web>
+    <parameter>
+      <valueName>alert_title</valueName>
+      <value>解除颱風警報</value>
+    </parameter>
+    <area>
+      <areaDesc>基隆市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10017000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>臺北市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>63000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>新北市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>65000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>宜蘭縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10002000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>桃園市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>68000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>新竹縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10004000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>新竹市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10018000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>花蓮縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10015000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>苗栗縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10005000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>臺中市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>66000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>彰化縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10007000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>南投縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10008000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>雲林縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10009000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>嘉義縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10010000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>嘉義市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10020000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>臺南市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>67000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>臺東縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10014000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>高雄市</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>64000000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>屏東縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10013000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>澎湖縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>10016000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>金門縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>09020000</value>
+      </geocode>
+    </area>
+    <area>
+      <areaDesc>連江縣</areaDesc>
+      <geocode>
+        <valueName>Taiwan_Geocode_112</valueName>
+        <value>09007000</value>
+      </geocode>
+    </area>
+  </info>
+</alert>

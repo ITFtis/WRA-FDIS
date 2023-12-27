@@ -1,0 +1,39 @@
+﻿<link href="~/Content/prj/sub/floodquery.css" rel="stylesheet">
+@*<link href="~/Content/prj/sgds/estimateFlood.css" rel="stylesheet">*@
+@Html.Partial("MapPartial")
+
+@*<script src="~/Scripts/prj/leafletmap.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/gis/other/xlsx.full.min.js"></script>*@
+@Scripts.Render("~/Scripts/prj/ef")
+<!--<script src="~/Scripts/prj/createMapHelper.js"></script>
+    <script src="~/Scripts/prj/data.js"></script>
+<script src="~/Scripts/prj/sub/floodQuery.js"></script>
+<script src="~/Scripts/prj/sub/estimateFlood.js"></script>
+<script src="~/Scripts/prj/statistics/floodStatisticsTable.js"></script>-->
+<!--積淹水災情統計表-->
+<!--<script src="~/Scripts/prj/statistics/facilityStatisticsTable.js"></script>-->        <!--水利設施統計表-->
+<!--<script src="~/Scripts/prj/statistics/landUseDistrictStatisticsTable.js"></script>--> <!--土地使用區分統計表-->
+
+<script src="~/Scripts/prj/ef.js"></script>
+<style>
+    .flood-query .floodpin-dom .legend + div {
+        display: none;
+    }
+
+    .flood-query .floodpin-dom .legend > .legend-icon:first-child, .flood-query .floodpin-dom .legend > .legend-icon:nth-child(3), .flood-query .floodpin-dom .legend > .legend-icon:nth-child(4) {
+        display: none;
+    }
+
+    .flood-query .pin-水利設施, .flood-query .handdrawfloodpin-dom {
+        display: none;
+    }
+
+    .jsPanel-content .fixed-table-body::-webkit-scrollbar, .jsPanel-content .fixed-table-body:not(.default-scrollbar)::-webkit-scrollbar {
+        height: 0.75em;
+        width: 0.75em;
+    }
+
+    .bs-checkbox {
+        width: 24px !important;
+    }
+</style>

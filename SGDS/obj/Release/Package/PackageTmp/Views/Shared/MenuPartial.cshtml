@@ -1,0 +1,39 @@
+﻿@using Dou.Misc 
+<ul class="nav navbar-nav">
+
+    @foreach (Menu.MenuItem item in Menu.GetCurrentMenu())
+    {
+        if (item.Children != null)
+        {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown">@item.Name<b class="caret"></b></a>
+                @GenGroupMenu(item.Children)
+            </li>
+        }
+        else
+        {
+            <li>@Html.ActionLink(item.Name, item.Attributes.Action, item.Attributes.ActionController)</li>
+        }
+    }
+</ul>
+@helper GenGroupMenu(IEnumerable<Menu.MenuItem > items)
+{
+    <ul class="dropdown-menu" >
+
+        @foreach (Menu.MenuItem item in items)
+        {
+            if (item.Children != null && item.Children.Count() > 0)
+            {
+                <li class="dropdown  dropdown-submenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@item.Name</a>
+                    @GenGroupMenu(item.Children)
+                </li>
+            }
+            else
+            {
+                <li>@Html.ActionLink(item.Name, item.Attributes.Action, item.Attributes.ActionController)</li>
+            }
+        }
+    </ul>
+}
+

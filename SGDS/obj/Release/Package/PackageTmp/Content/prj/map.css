@@ -1,0 +1,155 @@
+﻿body {
+    --dou-menu-height :57px;
+    position:absolute;
+    color:#2f2f2f
+}
+
+.fixed-top:hover{
+    z-index:99999999;
+}
+.popu-ctrl-container {
+    z-index: 1031;
+}
+body.full-body-content {
+    --dou-menu-height: 0px;
+    overflow:hidden;
+}
+body.full-body-content > header{
+    display:none;
+}
+body.full-body-content .basemapDivContainer{
+    top:1.5rem !important;
+}
+body.full-body-content .tools-group-panel{
+    top :74px !important;
+}
+.show-mainmenu{
+    display:none;
+}
+.fixed-at-left.fixed-single > .fix-popu-ctrl-toleft{
+    width:400px;
+}
+
+.resize-ctrl {
+    top: calc(var(--dou-menu-height) + 2px ) !important;
+    display: block !important;
+    width: auto;
+    z-index: 9999;
+}
+.body-content {
+    padding: 0 !important;
+    /*margin-top: var(--dou-menu-height) !important;*/
+    /*min-height: 0 !important;
+    height: calc( 100% - var(--dou-menu-height) ) !important;
+    padding-right: 0;*/
+    height: 100% !important;
+    transition: margin ease .2s;
+}
+#coordinateInfoDiv, .coordinateInfoPanel {
+    font-size: .8rem;
+}
+footer, .body-content + hr{
+    display: none;
+}
+footer, .body-content > iframe {
+    height: calc( 100% - 7px ) !important;
+}
+.popu-ctrl-container.fixed-at-left {
+    max-height: calc( 100% - var(--dou-menu-height) );
+    top: var(--dou-menu-height);
+}
+#main-ctrl > div > .nav-tabs .nav-link {
+    padding: 0.5rem 0.1rem;
+    font-weight: bold;
+    /*font-size:.8rem;*/
+}
+
+#main-ctrl > div > .nav-tabs .nav-link:not(.active) {
+    border: 1px #ddd dotted;
+    background-color: #f1f1f1;
+}
+#main-ctrl .pinswitch, #main-ctrl .pinlabel, #main-ctrl .pinlist, #other-ctrl .pinswitch, #other-ctrl .pinlabel, #other-ctrl .pinlist {
+    width: 1rem;
+    height:1rem;
+}
+input[type=checkbox][disabled] {
+    font-size: 1.1rem;
+    /* width: 1.1rem; */
+}
+#main-ctrl .pinctrl .checkbox-glyphicon, #other-ctrl .pinctrl .checkbox-glyphicon {
+    display: none;
+}
+#main-ctrl, #main-ctrl select, #main-ctrl input, #main-ctrl .input-group-text {
+    font-size: .9rem;
+}
+.meter .legend .legend-icon > span {
+    font-size: .7rem;
+}
+.village-disaster-history-infowindow .bootstrap-table .fixed-table-container .table .th-inner, .village-disaster-history-infowindow .bootstrap-table .fixed-table-container .table td {
+    padding: 0.1rem;
+}
+.village-disaster-history-infowindow .nav > li > a {
+    padding: 2px;
+}
+.leaflet-marker-icon.custer-護理機構 {
+    background-color: rgba(241, 128, 23, 0.3);
+}
+.leaflet-marker-icon.custer-護理機構 > div {
+    background-color: rgba(241, 128, 23, 0.6);
+    color: white;
+}
+.leaflet-marker-icon.custer-兒少安養機構  {
+    background-color: rgba(0, 0, 139, 0.3);
+}
+.leaflet-marker-icon.custer-兒少安養機構 > div {
+    background-color: rgba(0, 0, 139, 0.6);
+    color: white;
+}
+.leaflet-marker-icon.custer-老年福利機構 {
+    background-color: rgba(0, 100, 0, 0.3);
+}
+.leaflet-marker-icon.custer-老年福利機構 > div {
+    background-color: rgba(0, 100, 0, 0.6);
+    color: white;
+}
+.leaflet-marker-icon.custer-身心障礙福利機構{
+    background-color: rgba(85, 107, 47, 0.3);
+    color: white;
+}
+.leaflet-marker-icon.custer-身心障礙福利機構 > div {
+    background-color: rgba(85, 107, 47, 0.6);
+    color: white;
+}
+/*#qpesums-legend {
+    position: fixed;
+    bottom: 3px;
+    left: 5px;
+    color: white;
+    font-size: .8rem;
+}*/
+#legend-container {
+    position: fixed;
+    bottom: 3px;
+    left: 5px;
+    color: white;
+    font-size: .8rem;
+    transition:all ease-in-out .5s;
+}
+.has-fixed-show > #legend-container {
+    left: calc( var(--adj-popu-width, -370px) * -1 + 4px ) !important;
+}
+
+#rader-legend .legend-color, #qpesums-legend .legend-color, #dayrainfall-legend .legend-color {
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px #ddd solid;
+}
+
+#rader-legend, #qpesums-legend, #dayrainfall-legend {
+    text-shadow: 0 0 3px #000;
+}
+@media (max-width: 768px) {
+    .fixed-at-left.fixed-single > .fix-popu-ctrl-toleft {
+        margin-top: var(--dou-menu-height) !important;
+    }
+}

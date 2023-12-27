@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水災災情資訊整合展示平台</title>
+    @*<link rel="SHORTCUT ICON" href="~/images/logo.png" data-logo />*@
+    <link href="~/images/favicon.ico" rel="icon" type="image/x-icon">
+
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/dou/css")
+    @*<link href="~/Scripts/gis/b3/css/bootstrap.css" rel="stylesheet">*@
+    @Styles.Render("~/Scripts/gis/b3/css/3")
+    @*@Styles.Render("~/content/prj/css")*@
+    @*<link href="~/Scripts/gis/b3/css/bootstrap.css" rel="stylesheet">*@
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    @Html.Partial("SiteRootScriptPartial")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/Scripts/xlsx")*@
+    <script src="~/Scripts/gis/other/xlsx/xlsx.full.min.js"></script>
+    @Scripts.Render("~/dou/js")
+
+
+
+    @if (ViewBag.Leaflet != null && ViewBag.Leaflet)
+    {
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+              integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+              crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+                integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+                crossorigin=""></script>
+    }
+    <link rel="stylesheet" href="~/Content/prj/prj.css" />
+    @if ((ViewBag.HasGis != null && ViewBag.HasGis) || ViewBag.EmbedHtml != null && ViewBag.EmbedHtml)
+    {
+        <link rel="stylesheet" href="~/Content/prj/map.css" />
+    }
+    @if (ViewBag.HasGis != null && ViewBag.HasGis)
+    {
+        @Styles.Render("~/Scripts/gis/csskit")
+        @Scripts.Render("~/Scripts/gis/jskit")
+
+    }
+    @if (ViewBag.IncludeFloodPreventionPoint != null && ViewBag.IncludeFloodPreventionPoint)
+    {
+        <script src="~/Scripts/prj/floodPreventionPoint.js"></script>
+    }
+
+
+    <style>
+
+        /*muti level*/
+        .nav .dropdown-submenu {
+            position: relative;
+        }
+
+            .nav .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .nav .dropdown-submenu > a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #cccccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+
+        .nav .dropdown-submenu:hover > a:after {
+            border-left-color: #ffffff;
+        }
+
+        .nav .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+
+        #user-profile {
+            color: white;
+        }
+
+            #user-profile.fix-popover, #user-profile:hover {
+                color: lightgreen;
+            }
+
+            #user-profile.fix-popover {
+                text-shadow: 1px 1px 2px black;
+            }
+
+        @@media (min-width:992px) { /*bootstrap -lg*/
+
+            .dou-menu .user-profile-nav {
+                order: 9;
+            }
+
+            .dou-menu .navbar-toggler {
+                order: 10;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header class="fixed-top">
+        <nav class="dou-menu navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark box-shadow">
+            <div class="container-fluid">
+                <div class="menu-title">
+                    <img class="title-image" src="~/images/title.png">
+                    <h3 class="title-name"><b>水災災情資訊整合展示平台</b></h3>
+                </div>
+                @*<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">*@
+                @Html.Partial("DouUserProfilePartial")@*登入人員資料*@
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @Html.Partial("DouMenuPartial")@*功能菜單*@
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid body-content">
+        @RenderBody()@*各controoler資料*@
+        <span class="btn btn-default btn-sm resize-ctrl glyphicon glyphicon-resize-full"></span>
+    </div>
+    <hr />
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year - 版權所有,最佳解析度1280x800</p>
+    </footer>
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('.resize-ctrl').on('click', function () {
+            $('body').toggleClass('full-body-content');
+        })
+    });
+</script>

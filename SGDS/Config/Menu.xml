@@ -1,0 +1,9 @@
+2023/8/22 下午 04:58:39:
+System.InvalidOperationException: 產生 XML 文件時發生錯誤。 ---> System.InvalidOperationException: 不需要型別 SGDS.Controllers.comm.SGDSHtmlIFrameMenuDefAttribute。請使用 XmlInclude 或 SoapInclude 屬性指定非已知的靜態型別。
+   於 Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationWriterList1.Write6_MenuDefAttribute(String n, String ns, MenuDefAttribute o, Boolean isNullable, Boolean needType)
+   於 Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationWriterList1.Write7_ArrayOfMenuDefAttribute(Object o)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Xml.Serialization.XmlSerializer.Serialize(XmlWriter xmlWriter, Object o, XmlSerializerNamespaces namespaces, String encodingStyle, String id)
+   於 System.Xml.Serialization.XmlSerializer.Serialize(Stream stream, Object o, XmlSerializerNamespaces namespaces)
+   於 Dou.Help.MiscHelper.SerializeBinary(Object data, String outputFile) 於 D:\CVS_SRC\SourceCode\Dou\Help\MiscHelper.cs: 行 43
+   於 Dou.Misc.Menu.GetMenuDefs() 於 D:\CVS_SRC\SourceCode\Dou\Misc\Menu.cs: 行 85

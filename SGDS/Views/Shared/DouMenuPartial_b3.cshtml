@@ -1,0 +1,80 @@
+﻿@using Dou.Misc
+@using Dou.Misc.Attr
+@using Dou.Misc.Extension
+
+<ul class="nav navbar-nav dou-menu">
+
+    @foreach (Menu.MenuItem item in Menu.GetCurrentUserMenuTree())
+    {
+        if (item.Children != null)
+        {
+    <li class="dropdown">
+        @*a 下加label mousecursor 位置有問題 ，部分IE按下無反應(只能按最左顛才有反映)*@
+        @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">@Html.MenuImage(item.Icon != null ? Url.Content(item.Icon) : null) <label class=@(item.Id.Replace(".", "_"))><span>@(item.Name)</span></label><b class="caret"></b></a>*@
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Html.MenuImage(item.Icon != null ? Url.Content(item.Icon) : null)<span  class=@(item.Id.Replace(".", "_"))>@(item.Name)</span><b class="caret"></b></a>
+        @GenGroupMenu(item, item.Children)
+    </li>
+        }
+        else
+        {
+            @GenActionMenu(item);
+        }
+    }
+</ul>
+@helper GenActionMenu(Menu.MenuItem item)
+{
+    <li  class="nav-item">
+        <a href="@(item.Attributes is HtmlIFrameMenuDefAttribute &&  item.Attributes.IsPromptUI ?(item.Attributes as HtmlIFrameMenuDefAttribute).Url: Url.Action(item.Attributes.Action, item.Attributes.ActionController))"
+           class="@( IsWorkItem(item) ? "dou-action-controller" : "dou-non-action-controller")"
+           url="@((!item.Attributes.IsPromptUI && item.Attributes is HtmlIFrameMenuDefAttribute) ?  (item.Attributes as HtmlIFrameMenuDefAttribute).Url : null)"
+           target=@(item.Attributes.IsPromptUI ? item.Name : null)>
+            @*@Html.MenuImage(item.Icon != null ? Url.Content(item.Icon) : null)<label class=@(item.Id.Replace(".", "_"))><span>@(item.Name)</span></label>*@
+            @Html.MenuImage(item.Icon != null ? Url.Content(item.Icon) : null)<span class=@(item.Id.Replace(".", "_"))>@(item.Name)</span>
+        </a>
+    </li>
+}
+@helper GenGroupMenu(Menu.MenuItem node, IEnumerable<Menu.MenuItem> items)
+{
+    <ul class="dropdown-menu">
+
+        @foreach (Menu.MenuItem item in items)
+        {
+            if (item.Children != null && item.Children.Count() > 0)
+            {
+        <li class="dropdown  dropdown-submenu">
+            @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">@(item.Icon != null ? "<img src='" + Url.Content(item.Icon) + "'>" : "")<label class=@(item.Id.Replace(".", "_"))><span>@(item.Name)</span></label></a>*@
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@(item.Icon != null ? "<img src='" + Url.Content(item.Icon) + "'>" : "")<span class=@(item.Id.Replace(".", "_"))>@(item.Name)</span></a>
+            @GenGroupMenu(item, item.Children)
+        </li>
+            }
+            else
+            {
+                @GenActionMenu(item);
+            }
+        }
+    </ul>
+}
+@functions{
+    public bool IsWorkItem(Menu.MenuItem item)
+    {
+        return item.Attributes.ActionController.Equals(this.ViewContext.RouteData.Values["controller"].ToString()) &&
+            ((item.Attributes is HtmlIFrameMenuDefAttribute) ? (item.Attributes as HtmlIFrameMenuDefAttribute).Url.Equals(ViewBag.PageUrl) : true);/* item.Attributes.Action.Equals(this.ViewContext.RouteData.Values["action"].ToString());*/
+    }
+}
+<script>
+
+    $('.dou-action-controller').parents('.dropdown ').find('> a[data-toggle="dropdown"]').addClass("dou-action-controller-root");
+    $('.dou-menu a[url=""]').removeAttr("url");
+    $('.dou-menu a[target=""]').removeAttr("target");
+
+    $.each($('.dou-menu a[url]'), function () {
+        $(this).attr("href", $(this).attr("href") + "?url=" + $(this).attr("url")).removeAttr("url");
+    });
+
+    $('.dou-menu a:not([href="#"]):not([target]), #user-profile + .popover a').click(function () {
+        helper.misc.showBusyIndicator();
+    });
+
+</script>
+
+

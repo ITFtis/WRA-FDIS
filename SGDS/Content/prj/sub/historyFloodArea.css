@@ -1,0 +1,30 @@
+﻿
+.history-flood-area .panel-group .panel-heading {
+    background-color: rgba(0,0,0,.05);
+    padding: 2px 15px;
+    
+}
+
+.history-flood-area .panel-group .panel-heading a {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-decoration:auto;
+}
+.history-flood-area .panel-body{
+    padding:0 1rem;
+}
+.history-flood-area .checkbox-glyphicon{
+    display:none;
+}
+.history-flood-area .panel-title{
+    margin:0;
+    font-size: 1.1rem;
+}
+.history-flood-area .panel-group{
+    margin-bottom:.2rem;
+}
+.history-flood-area .meter .pinctrl {
+    padding-left: .5rem;
+    padding-bottom: 2px;
+}

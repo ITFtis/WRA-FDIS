@@ -1,0 +1,52 @@
+﻿@*<link href="~/Content/prj/floodquery.css" rel="stylesheet">*@
+@*@Html.Partial("MapPartial")*@
+@*<script src="~/Scripts/prj/createMapHelper.js"></script>*@
+@*<script src="~/Scripts/prj/leafletmap.js"></script>*@
+@*@Html.Partial("SiteRootScriptPartial")*@
+@*<script src="~/Scripts/prj/data.js"></script>*@
+<script src="~/Scripts/gis/other/highcharts.js"></script>
+<!--<script src="~/Scripts/prj/handDrawFlood.js"></script>-->
+
+<script src="~/Scripts/gis/leaflet/leaflet-omnivore.min.js"></script>
+<script src="~/Scripts/gis/other/jszip.js"></script>
+<script src="~/Scripts/gis/other/jszip-utils.js"></script>
+<script src="~/Scripts/gis/leaflet/L.Map.Sync.js"></script>
+@Scripts.Render("~/Scripts/prj/fvillagealert")
+@*<script src="~/Scripts/prj/sub/countySelect.js"></script>
+    <script src="~/Scripts/prj/sub/villageAlertPolygon.js"></script>
+    <script src="~/Scripts/prj/forecastVillageAlertInfo.js"></script>*@
+
+<style>
+    .body-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 2px .4rem !important;
+    }
+
+    .result-container {
+        padding: 0;
+        padding-right: .4rem;
+    }
+
+    .map-container {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .result-container > .title {
+        height: 30px;
+        background-color: limegreen;
+        color: white;
+        font-weight: bold;
+    }
+
+    .result-container > .map-container {
+        height: calc( 100% - 30px );
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .panel-title {
+        font-size: 1rem;
+    }
+</style>

@@ -1,0 +1,181 @@
+﻿body {
+}
+
+#f-dt {
+    width: 66.66666667% !important;
+}
+.f-dt.input-group {
+    width: 75% !important;
+}
+
+.hand-draw-flood > * {
+    margin-bottom: .3rem;
+}
+
+.input-group-addon {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .input-group-addon > .input-group-text {
+        border: none;
+    }
+
+.btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.15;
+}
+/*floodquery*/
+.flood-query-infowindow > .href-flood-data > .kmz-export {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.flood-query-infowindow > .href-flood-data, .flood-query-infowindow > .href-flood-data > .dowloap-kmz {
+    position: absolute;
+    right: 2px;
+    bottom: 10px;
+}
+
+    .flood-query-infowindow > .href-flood-data > .dowloap-kmz {
+        display: none;
+    }
+
+.flood-query-infowindow > .tab-content {
+    border: 1px solid #ddd;
+    border-bottom-width: 0;
+    min-width: 294px;
+}
+
+.flood-query-infowindow > .nav-tabs {
+}
+
+.tabs-below > .nav-tabs {
+    padding-bottom: .5rem;
+}
+
+.tabs-below > .nav-tabs, .tabs-right > .nav-tabs, .tabs-left > .nav-tabs {
+    border-bottom: 0;
+}
+
+.flood-query-infowindow > .nav > li > a {
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+.tabs-below > .nav-tabs > .nav-item > a.active, .tabs-below > .nav-tabs > .nav-item > a.active:hover, .tabs-below > .nav-tabs > .nav-item > a.active:focus {
+    border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-below > .nav-tabs > li > a {
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.deminfo .tooltip-inner {
+    background-color: rgba(0,0,0,.5);
+}
+
+.deminfo .tooltip-arrow:before {
+    border-right-color: rgba(0,0,0,.3) !important;
+}
+
+.deminfo .tooltip-inner {
+    text-align: left;
+    font-size: .5rem;
+}
+
+.flood-query > *, .flood-query-ef > * {
+    margin-bottom: .3rem;
+}
+.flood-query-ef > *{
+    margin-left:0;
+}
+.flood-query .package-kmz {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+    .flood-query .package-kmz:hover, .href-flood-data > .kmz-export:hover {
+        border-radius: 4px;
+        box-shadow: 0 0 4px grey;
+    }
+
+.package-kmz-container {
+    display: block !important;
+    display: inline-block !important;
+}
+
+.package-kmz-container {
+    padding-left: 6px !important;
+}
+
+element.style {
+}
+
+.flood-query > .col-md-12, .flood-query > .col-md-offset-3 {
+    clear: both;
+    padding-right: 0;
+    margin-bottom: 4px;
+    margin-right: 0px;
+}
+
+.flood-query .item-title {
+    padding-top: 3px;
+    margin-bottom: 5px;
+}
+
+.item-title {
+    color: #777;
+    border-bottom: #aaa;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-top: 6px;
+    clear: both;
+    margin-bottom: 2px;
+}
+.flood-query .floodarea-dom .legend {
+    display: none;
+}
+.flood-query .checkbox-glyphicon{
+    display:none;
+}
+
+/*.jsPanel-FloodStatisticsPanel .jsPanel-hdr-r-btn-close, .jsPanel-FacilityStatisticsPanel .jsPanel-hdr-r-btn-close, .jsPanel-LandUseDistrictStatisticsPanel .jsPanel-hdr-r-btn-close {
+    display: none;
+}*/
+
+.floodquerytimer-typegroup > label, .data-type-group > label{
+    width: auto;
+    margin-bottom: .5rem;
+}
+.flood-query > .row > *, .flood-query > .row > .row > *{
+    padding: 0;
+}
+.flood-query > .row>.row{
+    margin:0;
+}
+.flood-query > .row > *:first-child {
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.flood-query input[type="radio"]{
+    cursor:pointer;
+}
+
+.flood-statistics-table-container .tilte-div a, .land-use-district-statistics-table-container .tilte-div a {
+    float: right;
+    cursor: pointer;
+}
+
+.btn:not(.disabled) .spinner {
+    display: none;
+}
+
+.btn.disabled .no-spinner {
+    display: none;
+}

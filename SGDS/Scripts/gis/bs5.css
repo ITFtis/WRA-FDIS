@@ -1,0 +1,65 @@
+﻿body {
+    --bs-body-font-size: 1rem;
+    --bs-body-font-size: 14px;
+}
+
+#mainmenu {
+    padding: 5px;
+    min-height: 50px;
+}
+
+.close-mainmenu {
+    right: 0;
+    position: absolute;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: white;
+    font-size: var(--bs-body-font-size);
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: blue;
+}
+
+.navbar-collapse.justify-content-end {
+    margin-right: 40px;
+}
+.pinctrl .pinswitch + .checkbox-glyphicon {
+     left: 0; 
+}
+.pinctrl .checkbox-glyphicon {
+    position: relative;
+    margin-left: -1em;
+    top: 3px;
+}
+.auto-append-header::before{
+    position:absolute !important;
+}
+.cloud-group.auto-append-header, .cloud-opacity-ctrl-header.auto-append-header {
+    display: flex;
+}
+div.cloud {
+    position: relative;
+}
+
+img.cloud + span {
+    bottom: 0px;
+    left: 2px;
+}
+
+#typh{
+    padding:6px 20px 6px 15px;
+}
+.typh-select-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.gisdrawtool .btn, .mapbaselayer .btn{
+    font-size: var(--bs-body-font-size);
+}
+.gisdrawtool .btn:before {
+    white-space:nowrap;
+}

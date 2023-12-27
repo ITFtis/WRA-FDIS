@@ -1,0 +1,11 @@
+﻿<script>
+    window.app = window.app || {};
+    app.siteRoot = "@Url.Content("~/")";
+    $.AppConfigOptions = $.AppConfigOptions || {};
+    $.extend($.AppConfigOptions, {
+        script: {
+            gispath: "@Url.Content("~/Scripts/gis")"
+        },
+        siteroot: "@Url.Content("~/")"
+    });
+</script>

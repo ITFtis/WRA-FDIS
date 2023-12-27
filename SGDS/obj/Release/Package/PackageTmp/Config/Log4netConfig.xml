@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="big5" ?> 
+<log4net threshold="ALL" debug="false">
+	
+	<!-- 輸出到Console -->
+	<appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%-5level %logger [%property{NDC}] - %message%newline" />
+		</layout>
+	</appender>
+	
+	<appender name="ColoredConsoleAppender" type="log4net.Appender.ColoredConsoleAppender">
+    <mapping>
+        <level value="ERROR" />
+        <foreColor value="White" />
+        <backColor value="Red, HighIntensity" />
+    </mapping>
+    <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%-5level %type{1}:%line - %message%newline" />
+    </layout>
+	</appender>
+	
+	<!-- 輸出到檔案 -->
+	<appender name="InfoRollingFile" type="log4net.Appender.RollingFileAppender">
+		<file value="log\Info.log" />
+		<appendToFile value="true" />
+		<maximumFileSize value="1000KB" />
+		<maxSizeRollBackups value="1" /><!--超出檔案大小，備份檔案數限制  -->
+		<filter type="log4net.Filter.LevelRangeFilter">
+ 			<acceptOnMatch value="true" />
+ 			<levelMin value="Debug" />
+ 			<levelMax value="Warn" />
+ 		</filter>
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%date %5level [%thread] (%type{1}:%line) - %message%newline" />
+		</layout>
+	</appender>
+	<appender name="ErrorRollingFile" type="log4net.Appender.RollingFileAppender">
+		<file value="log\Error.log" />
+		<appendToFile value="true" />
+		<maximumFileSize value="1000KB" />
+		<maxSizeRollBackups value="1" /><!--超出檔案大小，備份檔案數限制  -->
+		<filter type="log4net.Filter.LevelRangeFilter">
+ 			<acceptOnMatch value="true" />
+ 			<levelMin value="Error" />
+ 			<levelMax value="Fatal" />
+ 		</filter>
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%date %5level [%thread] (%type{1}:%line) - %message%newline" />
+			<!--<conversionPattern value="%date %5level [%thread] (%file:%line) - %message%newline" />-->
+		</layout>
+	</appender>
+	
+	<appender name="NetSendAppender" type="log4net.Appender.NetSendAppender">
+    <threshold value="ERROR" />
+    <server value="0901107NB01" />
+    <recipient value="Administrator" />
+    <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date [%thread] %-5level %type{1} [%property{NDC}] - %message%newline" />
+    </layout>
+	</appender>
+
+
+	
+	<appender name="MemoryAppender" type="log4net.Appender.MemoryAppender">
+    <onlyFixPartialEventData value="true" />
+	</appender>
+
+	<root><!-- 所有的logger都會執行  -->
+		<!-- 輸出訊息等級 -->
+		<level value="Debug" />
+		<appender-ref ref="ColoredConsoleAppender" />
+		<appender-ref ref="InfoRollingFile" />
+		<appender-ref ref="ErrorRollingFile" />
+		<!--<appender-ref ref="SmtpAppender" />-->
+	</root>
+</log4net>
+

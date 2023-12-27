@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10">
+    <title>水災災情資訊整合展示平台</title>
+
+    @{
+        Layout = null;
+    }
+    @***********需修改User Namespace**************@
+    @model Dou.Models.UserBase
+    <link href="~/Scripts/gis/b3/css/bootstrap.css" rel="stylesheet">
+    @*@Styles.Render("~/Scripts/gis/b3/css/3")*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/dou/js")
+    <script>$.AppConfigOptions = { default_loading: '@Url.Content("~/Scripts/gis/images/loading/loading_black.gif")' } ;</script>
+    <style>
+        body{
+            position:absolute;
+            height:100%;
+            width:100%;
+        }
+        .dou-login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        .title-logo-container {
+            flex: 1;
+            display: block;
+            font-size: 3.2vw;
+            /*padding-top: 5vh;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-logo-container > * {
+            text-shadow: .1vw .1vw .2vw #a6a9aa,-.1vw -.1vw .2vw #a6a9aa;
+            font-weight: bold;
+            color: #0f4b8a;
+        }
+        .dou-login-container .form-container {
+            flex: auto;
+            z-index: 99;
+        }
+
+        .dou-login-container form {
+            /*min-width: 300px;*/
+            padding: 2rem 2rem .2rem 2rem;
+            border: 1px #ddd solid;
+            border-radius: .5rem;
+            background: rgba(166,169,170,.5);
+        }
+        .form {
+            /*min-width: 300px;*/
+            padding: 2rem 2rem .2rem 2rem;
+            border: 1px #ddd solid;
+            border-radius: .5rem;
+            background: rgba(166,169,170,.5);
+        }
+        .dou-login-container form input {
+            /* width: 320px !important;*/
+        }
+        .form-container .btn{
+            width:100%;
+        }
+
+        .input-group-addon {
+            z-index: 3;
+        }
+
+        .toggle-password {
+            margin-left: -2.5em;
+            cursor: pointer;
+            line-height: 1.5;
+            border: none;
+            background-color: transparent;
+            color: gray;
+        }
+        .contact-person{
+            padding-top:1.5rem;
+            font-weight:bold;
+            color:ghostwhite;
+        }
+
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+        hr {
+            border-top: 2px solid rgba(255, 255, 255, 1);
+            margin-top: -0.4rem;
+            margin-bottom: .625rem;
+        }
+        #Password {
+            border-radius: .375rem;
+        }
+
+        .bg-container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        .dou-login-container{
+            background-image: url('@Url.Content("~/images/bk.jpg")');
+            background-size:cover;
+        }
+        .bg-image {
+
+            @*background-image: url('@Url.Content("~/images/bg.jpg")');*@
+            /*filter: blur(5px);*/
+            /*backdrop-filter: blur(5px);*/
+        }
+        @@media(max-width: 512px) {
+            .title-logo-container {
+                font-size: 1.5rem;
+            }
+            .dou-login-container .form-container {
+                width: 92%;
+            }
+
+            .dou-login-container form {
+                padding: 1rem 1.5rem;
+            }
+
+            .dou-login-container form input {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        /****** Wave********/
+            body{
+            overflow:hidden;
+        }
+        .ocean {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /*background: #FFF;*/
+            filter: blur(2px) brightness(.65);
+            opacity: .6;
+        }
+
+        .wave {
+            --w1-max: 200px;
+            --w1-min: 180px;
+            --w1-scale: 5;
+            --w2-max: 380px;
+            --w2-min: 280px;
+            --w2-scale: 7;
+            --w3-max: 600px;
+            --w3-min: 450px;
+            --w3-scale: 8;
+            --w-speed: 60s;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+            background: url( @Url.Content("~/images/wave.svg") ) repeat-x;
+            position: absolute;
+            top: -100px;
+            width: 200%;
+            opacity: 1;
+            height: 100px;
+            animation: wave1 var(--w-speed) cubic-bezier(0.95, 0.6, 0.8, 0.95) infinite;
+            animation-direction: alternate;
+            transform: translate3d(0, 0, 0);
+            transform: scaleX(var(--w1-scale));
+        }
+        @@media(max-width: 512px) {
+            .wave {
+                --w1-max: 200px;
+                --w1-min: 180px;
+                --w1-scale: 5;
+                --w2-max: 240px;
+                --w2-min: 180px;
+                --w2-scale: 7;
+                --w3-max: 260px;
+                --w3-min: 200px;
+                --w3-scale: 8;
+                --w-speed: 30s;
+            }
+        }
+        .wave.w2 {
+            top: -110px;
+            opacity: .8;
+            height: 110px;
+            transform: scaleX(var(--w2-scale));
+            animation: wave2 var(--w-speed) cubic-bezier(0.95, 0.8, 0.75, 0.95) infinite;
+        }
+
+        .wave.w3 {
+            top: -120px;
+            opacity: .6;
+            height: 120px;
+            transform: scaleX(var(--w3-scale));
+            animation: wave3 var(--w-speed) cubic-bezier(0.98, 0.75, 0.75, 0.98) infinite;
+        }
+        /* .wave:nth-of-type(2) {
+            top: -175px;
+            animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+            opacity: 1;
+        }*/
+
+        @@keyframes wave1 {
+            0% {
+                margin-left: 0;
+                top: calc( 0px - var(--w1-max));
+                height: var(--w1-max);
+            }
+
+            50% {
+                margin-left: calc( 0% - 100% * var( --w1-scale) );
+                top: calc( 0px - var(--w1-min));
+                height: var(--w1-min);
+            }
+
+            100% {
+                margin-left: 0;
+                top: calc( 0px - var(--w1-max));
+                height: var(--w1-max);
+            }
+        }
+
+        @@keyframes wave2 {
+            0% {
+                margin-left: calc( 0% - 100% * var( --w2-scale) );
+                top: calc( 0px - var(--w2-min));
+                height: var(--w2-min)
+            }
+
+            50% {
+                margin-left: 0;
+                top: calc( 0px - var(--w2-max));
+                height: var(--w2-max)
+            }
+
+            100% {
+                margin-left: calc( 0% - 100% * var( --w2-scale) );
+                top: calc( 0px - var(--w2-min));
+                height: var(--w2-min)
+            }
+        }
+
+        @@keyframes wave3 {
+            0% {
+                margin-left: 0;
+                top: calc( 0px - var(--w3-max));
+                height: var(--w3-max)
+            }
+
+            50% {
+                margin-left: calc( 0% - 100% * var( --w3-scale) );
+                top: calc( 0px - var(--w3-min));
+                height: var(--w3-min)
+            }
+
+            100% {
+                margin-left: 0;
+                top: calc( 0px - var(--w3-max));
+                height: var(--w3-max)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container bg-image"><div class=""></div></div>
+    <div class="dou-login-container">
+
+        <div class="ocean">
+            <div class="wave w3"></div>
+            <div class="wave w2"></div>
+            <div class="wave w1"></div>
+        </div>
+        <div class="title-logo-container">
+            <div><img src="~/images/title.png"></div>
+            <label>水災災情資訊整合展示平台</label>
+        </div>
+        <div class="form-container">
+            @************重設User controller****************@
+            @using (Html.BeginForm("DouLogin", "User", new { ReturnUrl = ViewBag.ReturnUrl, re = true }, FormMethod.Post))
+            {
+                <h4>使用者登入</h4>
+                <hr>
+                if (ViewBag.ErrorMessage != null)
+                {
+                    <label style="color:red">@ViewBag.ErrorMessage</label>
+                }
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Id, new { @class = " control-label" })
+
+                    @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    <div class="input-group">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        <span class="input-group-addon">
+                            <i class="glyphicon  glyphicon-eye-open  glyphicon-eye-close toggle-password input-group-text" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success col-sm-12" value="@ViewBag.ReturnUrl"> 送 出 </button>
+              
+            }
+        <div class="form">
+            <h4>水利署公務雲登入</h4>
+            <hr>
+            <button onclick="Ssologin()" class="btn btn-success col-sm-12"> 水利署公務雲登入 </button>
+            <div class="clearfix"></div>
+            <div class="text-center contact-person">
+                本平台由經濟部水利署委託成功大學防災研究中心建置
+                <br>平台聯絡人：
+                <br>李自強先生，(06)384-0251#655
+                <br>tzuchiang.lee@dprc.ncku.edu.tw
+            </div>
+        </div>
+           
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('.toggle-password').click(function () {
+            $(this).toggleClass('glyphicon-eye-close')
+            $("#Password").attr('type', $(this).hasClass('glyphicon-eye-close') ? 'password' : 'text');
+            $(this).closest('.form-group').find('input').focus();
+        })
+    });
+
+    function Ssologin() {
+        var URL = 'https://cloud.wra.gov.tw/oauth2Server.do?';
+        URL += 'response_type=code';
+        URL += '&client_id=dprcflood';
+        //URL += '&redirect_uri=http://localhost:45953/User/DouLogin';
+        URL += '&redirect_uri=https://floodinfo.wra.gov.tw/FDIS/User/DouLogin';
+        URL += '&state=' + new Date().getTime();
+        window.location.href = URL;
+    }
+</script>

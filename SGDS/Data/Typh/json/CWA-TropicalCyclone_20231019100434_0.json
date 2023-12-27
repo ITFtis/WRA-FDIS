@@ -1,0 +1,307 @@
+{
+  "cwaopendata": {
+    "identifier": "CWA-TropicalCyclone_20231019100434",
+    "sender": "weather@cwa.gov.tw",
+    "sent": "2023-10-19T10:04:34+08:00",
+    "status": "Actual",
+    "msgType": "Update",
+    "scope": "Public",
+    "dataset": {
+      "tropicalCyclones": {
+        "tropicalCyclone": {
+          "year": "2023",
+          "typhoon_name": "SANBA",
+          "cwa_typhoon_name": "三巴",
+          "cwa_td_no": "18",
+          "cwa_ty_no": "16",
+          "analysis_data": {
+            "fix": [
+              {
+                "fix_time": "2023-10-17T08:00:00+08:00",
+                "coordinate": "110.3,15.5",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-17T14:00:00+08:00",
+                "coordinate": "110.3,15.9",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "7",
+                "moving_direction": "N",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-17T20:00:00+08:00",
+                "coordinate": "110.0,16.2",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "8",
+                "moving_direction": "NW",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-18T02:00:00+08:00",
+                "coordinate": "109.8,16.4",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "5",
+                "moving_direction": "NW",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-18T08:00:00+08:00",
+                "coordinate": "109.5,16.9",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "11",
+                "moving_direction": "NNW",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-18T14:00:00+08:00",
+                "coordinate": "108.9,17.7",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "18",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "70"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-18T20:00:00+08:00",
+                "coordinate": "108.7,18.2",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "10",
+                "moving_direction": "NNW",
+                "circle_of_15ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "70"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-19T02:00:00+08:00",
+                "coordinate": "108.5,18.6",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "8",
+                "moving_direction": "NNW",
+                "circle_of_15ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              },
+              {
+                "fix_time": "2023-10-19T08:00:00+08:00",
+                "coordinate": "108.4,19.4",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "15",
+                "moving_direction": "N",
+                "moving_prediction": [
+                  {
+                    "@lang": "zh-hant",
+                    "#text": "以每小時10轉3公里緩慢速度，向北北東轉西北進行"
+                  },
+                  {
+                    "@lang": "en-us",
+                    "#text": "NNE TURNING NW 10 KM/HR BECOMING SLOWLY 3 KM/HR"
+                  }
+                ],
+                "circle_of_15ms": {
+                  "radius": "80",
+                  "quadrant_radii": {
+                    "radius": [
+                      {
+                        "@dir": "NE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SE",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "SW",
+                        "#text": "80"
+                      },
+                      {
+                        "@dir": "NW",
+                        "#text": "80"
+                      }
+                    ]
+                  }
+                },
+                "circle_of_25ms": null
+              }
+            ]
+          },
+          "forecast_data": {
+            "fix": [
+              {
+                "init_time": "2023-10-19T08:00:00+08:00",
+                "tau": "6",
+                "coordinate": "108.6,20.0",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "12",
+                "moving_direction": "NNE",
+                "circle_of_15ms": {
+                  "radius": "80"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "30"
+              },
+              {
+                "init_time": "2023-10-19T08:00:00+08:00",
+                "tau": "12",
+                "coordinate": "108.8,20.5",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "10",
+                "moving_direction": "NNE",
+                "circle_of_15ms": {
+                  "radius": "80"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "60"
+              },
+              {
+                "init_time": "2023-10-19T08:00:00+08:00",
+                "tau": "18",
+                "coordinate": "108.8,20.7",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "4",
+                "moving_direction": "N",
+                "circle_of_15ms": {
+                  "radius": "80"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "75"
+              },
+              {
+                "init_time": "2023-10-19T08:00:00+08:00",
+                "tau": "24",
+                "coordinate": "108.7,20.8",
+                "max_wind_speed": "18",
+                "max_gust_speed": "25",
+                "pressure": "1000",
+                "moving_speed": "3",
+                "moving_direction": "NW",
+                "circle_of_15ms": {
+                  "radius": "80"
+                },
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "90"
+              },
+              {
+                "init_time": "2023-10-19T08:00:00+08:00",
+                "tau": "36",
+                "coordinate": "108.5,20.6",
+                "max_wind_speed": "15",
+                "max_gust_speed": "23",
+                "pressure": "1002",
+                "moving_speed": "3",
+                "moving_direction": "SW",
+                "circle_of_15ms": null,
+                "circle_of_25ms": null,
+                "radius_of_70percent_probability": "130",
+                "state_transfer": [
+                  {
+                    "@lang": "zh-hant",
+                    "#text": "減弱為熱帶性低氣壓"
+                  },
+                  {
+                    "@lang": "en-us",
+                    "#text": "BECOMING TROPICAL DEPRESSION"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
